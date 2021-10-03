@@ -3,5 +3,8 @@ body, html {
   width: 100%;
 }
 body {
-  background: linear-gradient(119deg, #02011a 0%, #6e88bf 50%, #ffffff 100%);
+  height: 100%;
+  margin = 0;
+  background-color: white; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, #6e88bf, white);
 }
