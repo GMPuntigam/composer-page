@@ -1,10 +1,21 @@
 body, html {
   height: 100%;
   width: 100%;
+  
 }
 body {
   height: 100%;
   margin = 0;
   background-color: white; /* For browsers that do not support gradients */
   background-image: linear-gradient(to bottom right, #6e88bf, white);
+  font-family: Noto-Sans;
+}
+h1 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+h6 {
+  text-align: center;
 }
