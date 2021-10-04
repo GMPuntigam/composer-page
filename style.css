@@ -8,6 +8,7 @@ body, html {
   background-color: white; /* For browsers that do not support gradients */
   background-image: linear-gradient(to bottom right, #6e88bf, white);
   font-family: Sans-Serif;
+  position: relative;
 }
 p {
   position: absolute;
