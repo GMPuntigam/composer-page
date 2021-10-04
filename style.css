@@ -10,12 +10,19 @@ body {
   background-image: linear-gradient(to bottom right, #6e88bf, white);
   font-family: Noto-Sans;
 }
-h1 {
-  text-align: center;
-}
 p {
   text-align: center;
 }
 h6 {
   text-align: center;
+}
+.scroller {
+    height: 300px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-padding: 40px;
+}
+
+.scroller section {
+    scroll-snap-align: start;
 }
