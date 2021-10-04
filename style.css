@@ -5,7 +5,6 @@
 }
 body, html {
   overflow-x: hidden;
-  overflow-y: hidden;
   background-color: white; /* For browsers that do not support gradients */
   background-image: linear-gradient(to bottom right, #6e88bf, white);
   font-family: Sans-Serif;
@@ -35,7 +34,7 @@ h2 {
   font-size: calc(1rem + 3vw);
 }
 .scroller {
-  height: 300px;
+  height: 800px;
   overflow-y: scroll;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
