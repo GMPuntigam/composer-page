@@ -8,7 +8,7 @@ body {
   margin = 0;
   background-color: white; /* For browsers that do not support gradients */
   background-image: linear-gradient(to bottom right, #6e88bf, white);
-  font-family: Noto-Sans;
+  font-family: Sans-Serif;
 }
 p {
   text-align: center;
