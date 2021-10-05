@@ -5,8 +5,7 @@
 }
 body, html {
   overflow-x: hidden;
-  background-color: white; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, #6e88bf, white);
+  background-color: white; 
   font-family: Sans-Serif;
   position: relative;
 }
@@ -26,6 +25,7 @@ h1 {
 }
 h1:after {
 	content:'';
+	position: relative;
 	display:block;
 	border:2px solid black;
 	border-radius:4px;
@@ -45,7 +45,7 @@ h2 {
   font-size: calc(1rem + 3vw);
 }
 .scroller {
-  height: 800px;
+  height: 900px;
   overflow-y: scroll;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
