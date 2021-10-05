@@ -5,6 +5,7 @@
 }
 body, html {
   overflow-x: hidden;
+  overflow-y: hidden;
   background-color: white; 
   font-family: Sans-Serif;
   position: relative;
@@ -14,7 +15,7 @@ p {
   top: 30%;
   horizontal-align: center;
   margin: 15px;
-font-size: calc(1rem + 0.5vw);
+  font-size: calc(1rem + 0.5vw);
 }
 h1 {
   text-align: center;
@@ -55,7 +56,6 @@ h2 {
 .scroller section {
   scroll-snap-align: start;
   border-right: 1px solid white;
-	padding: 1rem;
 	min-width: 100vw;
 	height: 100vh;
 	text-align: center;
