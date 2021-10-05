@@ -54,7 +54,6 @@ h2 {
   scroll-padding: 0;
 	margin: auto;
 }
-
 .scroller section {
   scroll-snap-align: start;
   border-right: 1px solid white;
@@ -63,4 +62,7 @@ h2 {
 	height: 100vh;
 	text-align: center;
 	position: relative;
+}
+img {
+  border-radius: 50%;
 }
