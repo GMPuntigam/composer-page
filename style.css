@@ -12,9 +12,10 @@ body, html {
 }
 p {
   position: relative;
-  top: 30%;
-  horizontal-align: center;
+  top: 15%;
+  left: 50%;
   margin: 15px;
+  width: 40%;
   font-size: calc(1rem + 0.5vw);
 }
 h1 {
