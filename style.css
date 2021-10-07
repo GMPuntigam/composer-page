@@ -8,7 +8,18 @@ body, html {
   overflow-y: hidden;
   background-color: white; 
   font-family: Sans-Serif;
-  position: relative;
+}
+body {
+  margin: 0 auto;
+}
+.sticky {
+	background-color: #ffffff;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  z-index: 10;
+  display: table;
+  margin: 0 auto;
 }
 p {
   position: relative;
@@ -24,6 +35,7 @@ h1 {
   color: black;
   width: 100%;
   font-size: calc(1rem + 3vw);
+  position: fixed;
 }
 h1:after {
 	content:'';
@@ -35,6 +47,7 @@ h1:after {
 	-moz-border-radius:4px;
 	width: 80%;
 	margin: auto;
+  margin-bottom: 10px;
 }
 h2 {
   position: relative;
@@ -46,14 +59,27 @@ h2 {
   left: 0;
   font-size: calc(1rem + 3vw);
 }
+h3 {
+  color: black;
+  font-size: calc(1rem + 0.5vw);
+  display:inline;
+  padding: 10px;
+  margin: 5px;
+  min-width:100px;
+  background-color: white;
+}
 .scroller {
   height: 900px;
 	width: 100%;
+  top: 15%;
   overflow-y: scroll;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
   scroll-padding: 0;
 	margin: auto;
+  position: fixed;
+  scroll-behavior: smooth;
+  scroll-margin-top: 1em;
 }
 .scroller section {
   scroll-snap-align: start;
@@ -63,7 +89,35 @@ h2 {
 	height: 100vh;
 	text-align: center;
 	position: relative;
+  scroll-behavior: smooth;
+  scroll-margin-top: 1em;
 }
 img {
   border-radius: 50%;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+}
+.list-inline {
+	list-style: none;
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+	padding: 0;
+  font-size: calc(1rem + 0.5vw);
+  
+}
+
+.list-inline > li {
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+  font-style: black;
+}
+
+.list-inline > li:before {
+	content: "\200B"; /* 1 */
+	position: absolute; /* 2 */
 }
