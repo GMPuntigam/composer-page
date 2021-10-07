@@ -101,6 +101,9 @@ a {
 a:visited {
   color: black;
 }
+a:link {
+  color: black;
+}
 .list-inline {
 	list-style: none;
 	margin-left: -0.5em;
