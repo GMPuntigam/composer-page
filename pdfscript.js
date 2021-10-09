@@ -1,7 +1,7 @@
 var myState = {
     pdf: null,
     currentPage: 1,
-    zoom: 0.7
+    zoom: 0.6
 }
 
 function render() {
