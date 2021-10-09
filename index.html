@@ -3,10 +3,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <title>Georg Puntigam - Composer</title>
-    <script type="text/javascript" src='pdfscript.js'> </script>
+    <script src='pdfscript.js' type="text/javascript"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src='activelink.js'> </script>
+    <script src='activelink.js' type="text/javascript"> </script>
+    <script src="audioplayer.js" type="module"></script>
 </head>
 
 <html>
@@ -33,10 +34,46 @@
                 <div id="my_pdf_viewer">
                     <div id="score">
                         <div id="scorelist">
-                            <div class="scorelink"><button class="scorebutton" id="Into_the_void"><h3>Into the Void</h3></button></div>
-                            <div class="scorelink"><button class="scorebutton" id="In_Jubilo"><h3>In Jubilo</h3></button></div>
-                            <div class="scorelink"><button class="scorebutton" id="Weihnachtstanz"><h3>Weihnachtstanz</h3></button></div>
+                            <div class="scorelink">
+                                <button class="scorebutton" id="Into_the_void">
+                                    <h3>Into the Void</h3>
+                                    
+                                        <!-- <audio controls>
+                                            <source src="audios/into_the_void.mp3" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                      </audio> -->
+                                </button>
+                            </div>
+                            <div class="scorelink">
+                                <button class="scorebutton" id="In_Jubilo">
+                                    <h3>In Jubilo</h3>
+                                </button>
+                            </div>
+                            <div class="scorelink">
+                                <button class="scorebutton" id="Weihnachtstanz">
+                                    <h3>Weihnachtstanz</h3>
+                                </button>
+                            </div>
                         </div>
+                        <div id="audios">
+                            <div id="audio-player-container">
+                                <audio src="audios/into_the_void.mp3" preload="metadata" loop></audio>
+                                <!-- <p>audio player ish</p> -->
+                                <button id="play-icon"></button>
+                                <span id="current-time" class="time">0:00</span>
+                                <input type="range" id="seek-slider" max="100" value="0">
+                                <span id="duration" class="time">0:00</span>
+                            </div>
+                            <div id="audio-player-container">
+                                <audio src="in_jubilo.mp3" preload="metadata" loop></audio>
+                                <!-- <p>audio player ish</p> -->
+                                <button id="play-icon"></button>
+                                <span id="current-time" class="time">0:00</span>
+                                <input type="range" id="seek-slider" max="100" value="0">
+                                <span id="duration" class="time">0:00</span>
+                            </div>
+                        </div>
+
                         <button id="go_previous">&#9664;
                             <script>
                                 previous();
