@@ -25,6 +25,7 @@ function displaypdf(pdf_path) {
     pdfjsLib.getDocument(pdf_path).then((pdf) => {
 
         myState.pdf = pdf;
+        myState.currentPage = 1;
         render();
     });
 }
