@@ -128,7 +128,7 @@ div#canvas_container {
   position: relative;
   width: 900px;
   height: 450px;
-  overflow: auto;
+  overflow: scroll;
   margin: auto;
   margin-top: 10%;
   border: solid 3px;
