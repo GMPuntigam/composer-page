@@ -1,7 +1,7 @@
 var myState = {
     pdf: null,
     currentPage: 1,
-    zoom: 0.8
+    zoom: 0.7
 }
 
 function render() {
@@ -33,7 +33,7 @@ document.getElementById('go_previous').addEventListener('click', (e) => {
     if(myState.pdf == null || myState.currentPage == 1) 
       return;
     myState.currentPage -= 1;
-    document.getElementById("current_page").value = myState.currentPage;
+    // document.getElementById("current_page").value = myState.currentPage;
     render();
 });
 }
@@ -42,7 +42,7 @@ document.getElementById('go_next').addEventListener('click', (e) => {
     if(myState.pdf == null || myState.currentPage > myState.pdf._pdfInfo.numPages) 
        return;
     myState.currentPage += 1;
-    document.getElementById("current_page").value = myState.currentPage;
+    // document.getElementById("current_page").value = myState.currentPage;
     render();
 });
 }

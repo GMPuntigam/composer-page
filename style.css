@@ -71,7 +71,7 @@ h3 {
 .scroller {
   height: 900px;
 	width: 100%;
-  top: 10%;
+  top: 12%;
   overflow-y: scroll;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
