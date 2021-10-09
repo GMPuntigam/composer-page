@@ -125,8 +125,9 @@ a:link {
 	position: absolute; /* 2 */
 }
 div#canvas_container {
-  width: 800px;
+  width: 900px;
   height: 450px;
   overflow: auto;
+  margin: auto;
   border: solid 3px;
 }
