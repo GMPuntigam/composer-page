@@ -21,8 +21,8 @@ function render() {
         });
     });
 }
-function displaypdf() {
-    pdfjsLib.getDocument('Into_the_void.pdf').then((pdf) => {
+function displaypdf(pdf_path) {
+    pdfjsLib.getDocument(pdf_path).then((pdf) => {
 
         myState.pdf = pdf;
         render();
