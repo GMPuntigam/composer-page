@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Georg Puntigam - Composer</title>
     <script type="text/javascript" src='pdfscript.js'> </script>
-    <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src='activelink.js'> </script>
 </head>
 
 <html>
@@ -15,10 +15,10 @@
         <article class="scroller">
             <nav class="sticky">
                 <ul class="list-inline">
-                    <li><a href="#aboutme">About me</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#commission">Commission</a></li>
-                    <li><a href="#tutoring">Tutoring</a></li>
+                    <li><a class="navigation" href="#aboutme">About me</a></li>
+                    <li><a class="navigation" href="#works">Works</a></li>
+                    <li><a class="navigation" href="#commission">Commission</a></li>
+                    <li><a class="navigation" href="#tutoring">Tutoring</a></li>
                 </ul>
             </nav>
             <section id="aboutme">
@@ -50,19 +50,6 @@
                             </script>
                         </button>
                     </div>
-                    <!-- <div id="navigation_controls">
-                        
-                        <input id="current_page" value="1" type="number">
-                        <script>
-                            current();
-                        </script>
-                        </input>
-                        
-                    </div> -->
-                    <!-- <div id="zoom_controls">  
-                        <button id="zoom_in">+</button>
-                        <button id="zoom_out">-</button>
-                    </div> -->
                 </div>
             </section>
             <section id="commission">

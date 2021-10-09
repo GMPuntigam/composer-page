@@ -59,15 +59,6 @@ h2 {
   left: 0;
   font-size: calc(1rem + 3vw);
 }
-h3 {
-  color: black;
-  font-size: calc(1rem + 0.5vw);
-  display:inline;
-  padding: 10px;
-  margin: 5px;
-  min-width:100px;
-  background-color: white;
-}
 .scroller {
   height: 900px;
 	width: 100%;
@@ -95,14 +86,22 @@ h3 {
 img {
   border-radius: 50%;
 }
-a {
-  text-decoration: none;
+a{
+  text-decoration: underline 0.15em rgb(255, 255, 255);
+  transition: text-decoration-color 0.4s;
 }
+
 a:visited {
   color: black;
 }
 a:link {
   color: black;
+} 
+a:hover {
+  text-decoration-color: rgb(0, 0, 0);
+}
+a.currentlyActive{
+  text-decoration-color: rgb(0, 0, 0);
 }
 .list-inline {
 	list-style: none;
@@ -117,8 +116,10 @@ a:link {
 	display: inline-block;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
-  font-style: black;
+  
 }
+
+
 
 .list-inline > li:before {
 	content: "\200B"; /* 1 */
