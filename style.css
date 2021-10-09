@@ -62,9 +62,11 @@ h2 {
 div#scorelist{
   display: inline-block;
   position: relative;
+  margin:auto;
+  margin-top: 5%;
+  height: 750px;
   top: -700px;
   padding: 10px;
-  width: 15%;
 }
 
 div .scorelink{
@@ -166,7 +168,6 @@ div#canvas_container {
   display: inline-block;
 }
 button#go_previous{
-  width: 5%;
   position: relative;
   height: 750px;
   top: -370px;
@@ -184,7 +185,6 @@ button#go_previous{
   transition-duration: 0.4s;
 }
 button#go_next{
-  width: 5%;
   position: relative;
   height: 750px;
   top: -370px;
