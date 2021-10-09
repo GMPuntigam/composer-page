@@ -1,3 +1,9 @@
+var myState = {
+    pdf: null,
+    currentPage: 1,
+    zoom: 1
+}
+
 function render() {
     myState.pdf.getPage(myState.currentPage).then((page) => {
     
@@ -15,21 +21,12 @@ function render() {
         });
     });
 }
-
 function displaypdf() {
-    var myState = {
-        pdf: null,
-        currentPage: 1,
-        zoom: 1
-    }
-
     pdfjsLib.getDocument('Into_the_void.pdf').then((pdf) => {
 
         myState.pdf = pdf;
         render();
-
     });
-
 }
 function previous() {
 document.getElementById('go_previous').addEventListener('click', (e) => {
