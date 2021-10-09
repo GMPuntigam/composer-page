@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Georg Puntigam - Composer</title>
 </head>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js">
+</script>
 <html>
     <body>
         <h1>Georg Puntigam - Composer</h1>
@@ -23,8 +28,20 @@
             </section>
             <section id="works">
                 <h2>Works</h2>
-                <img src="images/score.jpg" alt="Avatar" style="width:25%; position: absolute; left: 15%; top: 20% ">
-                <p>Here I proudly present to you the pieces of music that I have written so far. All pieces are available for free but I would appreciate a small donation.</p>
+                <div id="my_pdf_viewer">
+                    <div id="canvas_container">
+                        <canvas id="pdf_renderer"></canvas>
+                    </div>
+                    <div id="navigation_controls">
+                        <button id="go_previous">Previous</button>
+                        <input id="current_page" value="1" type="number"/>
+                        <button id="go_next">Next</button>
+                    </div>
+                    <div id="zoom_controls">  
+                        <button id="zoom_in">+</button>
+                        <button id="zoom_out">-</button>
+                    </div>
+                </div>
             </section>
             <section id="commission">
                 <h2>Commission</h2>
@@ -35,6 +52,63 @@
                 <p>If you want advice on how to improve as an arranger and composer please get in contact with me and I will try to make time for you.</p>
             </section>
         </article>
+    <script>
+        var myState = {
+            pdf: null,
+            currentPage: 1,
+            zoom: 1
+        }
+        
+        pdfjsLib.getDocument('Into_the_void.pdf').then((pdf) => {
+        
+            myState.pdf = pdf;
+            render();
+    
+        });
+    
+        function render() {
+            myState.pdf.getPage(myState.currentPage).then((page) => {
+            
+                var canvas = document.getElementById("pdf_renderer");
+                var ctx = canvas.getContext('2d');
+        
+                var viewport = page.getViewport(myState.zoom);
+    
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+            
+                page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                });
+            });
+        }
+        //Step 1: Get the file from the input element                
+        inputElement.onchange = function(event) {
+
+        var file = event.target.files[0];
+
+        //Step 2: Read the file using file reader
+        var fileReader = new FileReader();  
+
+        fileReader.onload = function() {
+
+            //Step 4:turn array buffer into typed array
+            var typedarray = new Uint8Array(this.result);
+
+            //Step 5:pdfjs should be able to read this
+            const loadingTask = pdfjsLib.getDocument(typedarray);
+            loadingTask.promise.then(pdf => {
+                // The document is loaded here...
+            });
+                        
+
+        };
+        //Step 3:Read the file as ArrayBuffer
+        fileReader.readAsArrayBuffer(file);
+
+        }
+    </script>
     </body>
 </html>
 

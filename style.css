@@ -124,3 +124,9 @@ a:link {
 	content: "\200B"; /* 1 */
 	position: absolute; /* 2 */
 }
+div#canvas_container {
+  width: 800px;
+  height: 450px;
+  overflow: auto;
+  border: solid 3px;
+}
