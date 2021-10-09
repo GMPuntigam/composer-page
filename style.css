@@ -116,7 +116,7 @@ div#scorelist button
 img {
   border-radius: 50%;
 }
-a, .scorebutton:hover{
+a, .scorebutton{
   text-decoration: underline 0.15em rgb(255, 255, 255);
   transition: text-decoration-color 0.4s;
 }
@@ -130,7 +130,7 @@ a:link {
 a:hover, .scorebutton:hover{
   text-decoration-color: rgb(0, 0, 0);
 }
-a.currentlyActive, .scorebutton:hover{
+a.currentlyActive, .scorebutton.currentlyActive{
   text-decoration-color: rgb(0, 0, 0);
 }
 .list-inline {
