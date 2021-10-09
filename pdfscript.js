@@ -28,6 +28,7 @@ function displaypdf(pdf_path) {
         render();
     });
 }
+
 function previous() {
 document.getElementById('go_previous').addEventListener('click', (e) => {
     if(myState.pdf == null || myState.currentPage == 1) 

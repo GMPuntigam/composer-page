@@ -59,6 +59,36 @@ h2 {
   left: 0;
   font-size: calc(1rem + 3vw);
 }
+div#scorelist{
+  display: inline-block;
+  position: relative;
+  margin:auto;
+  margin-top: 5%;
+  height: 750px;
+  top: -700px;
+  padding: 10px;
+}
+
+div .scorelink{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+div#scorelist h3 {
+  position: relative;
+  color: black;
+  left: 0;
+  font-size: calc(1rem + 0vw);
+
+}
+div#scorelist button
+{background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
 .scroller {
   height: 900px;
 	width: 100%;
@@ -119,8 +149,6 @@ a.currentlyActive{
   
 }
 
-
-
 .list-inline > li:before {
 	content: "\200B"; /* 1 */
 	position: absolute; /* 2 */
@@ -141,7 +169,7 @@ div#canvas_container {
 }
 button#go_previous{
   position: relative;
-  height: 450px;
+  height: 750px;
   top: -370px;
   margin: auto;
   margin-top: 10%;
