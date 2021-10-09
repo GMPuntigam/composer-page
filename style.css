@@ -62,10 +62,10 @@ h2 {
 div#scorelist{
   display: inline-block;
   position: relative;
+  right: 100px;
   margin:auto;
   margin-top: 5%;
-  height: 750px;
-  top: -700px;
+  top: -650px;
   padding: 10px;
 }
 
@@ -160,7 +160,7 @@ div#score {
 
 div#canvas_container {
   position: relative;
-  width: 900px;
+  width: 550px;
   height: 750px;
   overflow: auto;
   margin: auto;
