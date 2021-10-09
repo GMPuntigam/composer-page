@@ -124,27 +124,34 @@ a:link {
 	content: "\200B"; /* 1 */
 	position: absolute; /* 2 */
 }
+div#score {
+  display: table;
+  margin: auto;
+}
+
 div#canvas_container {
   position: relative;
   width: 900px;
   height: 450px;
-  overflow: scroll;
+  overflow: auto;
   margin: auto;
   margin-top: 10%;
   border: solid 3px;
-  display: inline;
+  display: inline-block;
 }
 button#go_previous{
   position: relative;
   height: 450px;
+  top: -220px;
   margin: auto;
   margin-top: 10%;
-  display: inline;
+  display: inline-block;
 }
 button#go_next{
   position: relative;
   height: 450px;
+  top: -220px;
   margin: auto;
   margin-top: 10%;
-  display: inline;
+  display: inline-block;
 }
