@@ -146,6 +146,15 @@ button#go_previous{
   margin: auto;
   margin-top: 10%;
   display: inline-block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-size: calc(1rem + 3vw);
+  color: rgb(109, 112, 110);
+  transition-duration: 0.4s;
 }
 button#go_next{
   position: relative;
@@ -154,4 +163,19 @@ button#go_next{
   margin: auto;
   margin-top: 10%;
   display: inline-block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-size: calc(1rem + 3vw);
+  color: rgb(109, 112, 110);
+  transition-duration: 0.4s;
+}
+button#go_previous:hover {
+  color: black;
+}
+button#go_next:hover {
+  color: black;
 }
