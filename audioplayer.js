@@ -4,8 +4,6 @@ import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
 const playIconContainer = document.getElementById('play-icon');
 const audioPlayerContainer = document.getElementById('audio-player-container');
 const seekSlider = document.getElementById('seek-slider');
-const volumeSlider = document.getElementById('volume-slider');
-const muteIconContainer = document.getElementById('mute-icon');
 let playState = 'play';
 let muteState = 'unmute';
 
@@ -16,15 +14,6 @@ const playAnimation = lottieWeb.loadAnimation({
   loop: false,
   autoplay: false,
   name: "Play Animation",
-});
-
-const muteAnimation = lottieWeb.loadAnimation({
-    container: muteIconContainer,
-    path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/mute/mute.json',
-    renderer: 'svg',
-    loop: false,
-    autoplay: false,
-    name: "Mute Animation",
 });
 
 playAnimation.goToAndStop(14, true);
@@ -43,40 +32,19 @@ playIconContainer.addEventListener('click', () => {
     }
 });
 
-muteIconContainer.addEventListener('click', () => {
-    if(muteState === 'unmute') {
-        muteAnimation.playSegments([0, 15], true);
-        audio.muted = true;
-        muteState = 'mute';
-    } else {
-        muteAnimation.playSegments([15, 25], true);
-        audio.muted = false;
-        muteState = 'unmute';
-    }
-});
-
 const showRangeProgress = (rangeInput) => {
     if(rangeInput === seekSlider) audioPlayerContainer.style.setProperty('--seek-before-width', rangeInput.value / rangeInput.max * 100 + '%');
-    else audioPlayerContainer.style.setProperty('--volume-before-width', rangeInput.value / rangeInput.max * 100 + '%');
 }
 
 seekSlider.addEventListener('input', (e) => {
     showRangeProgress(e.target);
 });
-volumeSlider.addEventListener('input', (e) => {
-    showRangeProgress(e.target);
-});
-
-
-
-
 
 /** Implementation of the functionality of the audio player */
 
 const audio = document.querySelector('audio');
 const durationContainer = document.getElementById('duration');
 const currentTimeContainer = document.getElementById('current-time');
-const outputContainer = document.getElementById('volume-output');
 let raf = null;
 
 const calculateTime = (secs) => {
@@ -132,11 +100,4 @@ seekSlider.addEventListener('change', () => {
     if(!audio.paused) {
         requestAnimationFrame(whilePlaying);
     }
-});
-
-volumeSlider.addEventListener('input', (e) => {
-    const value = e.target.value;
-
-    outputContainer.textContent = value;
-    audio.volume = value / 100;
 });
