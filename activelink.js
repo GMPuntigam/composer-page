@@ -11,13 +11,19 @@ $(function() {
 $(function() {
     $('#Into_the_void').click(function() {
       // this removes the underline class from all other ".navigation" links.
-      displaypdf('Into_the_void.pdf')
+      displaypdf('scores/Into_the_void.pdf')
     });
   });
 
   $(function() {
     $('#In_Jubilo').click(function() {
       // this removes the underline class from all other ".navigation" links.
-      displaypdf('In_Jubilo.pdf')
+      displaypdf('scores/In_Jubilo.pdf')
+    });
+  });
+  $(function() {
+    $('#Weihnachtstanz').click(function() {
+      // this removes the underline class from all other ".navigation" links.
+      displaypdf('scores/Weihnachtstanz.pdf')
     });
   });
