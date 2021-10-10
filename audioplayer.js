@@ -124,6 +124,10 @@ const whilePlaying = () => {
     currentTimeContainer.textContent = calculateTime(seekSlider.value);
     audioPlayerContainer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
     raf = requestAnimationFrame(whilePlaying);
+    if (audio.currentTime == floor(audio.duration)) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
 }
 
 if (audio.readyState > 0) {
