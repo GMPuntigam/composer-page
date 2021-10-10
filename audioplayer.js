@@ -90,7 +90,7 @@ volumeSlider.addEventListener('input', (e) => {
 
 /* Implementation of the functionality of the audio player */
 
-// var audio = document.querySelector('audio');
+var audio = document.querySelector('audio');
 const durationContainer = document.getElementById('duration');
 const currentTimeContainer = document.getElementById('current-time');
 const outputContainer = document.getElementById('volume-output');
