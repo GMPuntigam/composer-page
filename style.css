@@ -168,8 +168,9 @@ a.currentlyActive, .scorebutton.currentlyActive{
 	position: absolute; /* 2 */
 }
 div#score {
-  display: table;
+  display: inline-flex;
   margin: auto;
+  margin-top: 3%;
 }
 
 div#canvas_container {
@@ -184,9 +185,7 @@ div#canvas_container {
 }
 button#go_previous{
   position: relative;
-  height: 750px;
   margin: auto;
-  margin-top: 10%;
   display: inline-flex;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -197,13 +196,10 @@ button#go_previous{
   font-size: calc(1rem + 3vw);
   color: rgb(109, 112, 110);
   transition-duration: 0.4s;
-  align-items: center;
 }
 button#go_next{
   position: relative;
-  height: 750px;
   margin: auto;
-  margin-top: 10%;
   display: inline-flex;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -214,7 +210,6 @@ button#go_next{
   font-size: calc(1rem + 3vw);
   color: rgb(109, 112, 110);
   transition-duration: 0.4s;
-  align-items: center;
 }
 button#go_previous:hover {
   color: black;
