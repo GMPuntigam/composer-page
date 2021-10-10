@@ -83,23 +83,25 @@
                             <button id="mute-icon"></button>
                         </div>
                     </div>
-                    <button id="go_previous">&#9664;
-                        <script>
-                            previous();
-                        </script>
-                    </button>
-                    <div id="canvas_container">
-                        <canvas id="pdf_renderer">
+                    <div id="scoreview">
+                        <button id="go_previous">&#9664;
                             <script>
-                                displaypdf('scores/Into_the_void.pdf');
+                                previous();
                             </script>
-                        </canvas>
+                        </button>
+                        <div id="canvas_container">
+                            <canvas id="pdf_renderer">
+                                <script>
+                                    displaypdf('scores/Into_the_void.pdf');
+                                </script>
+                            </canvas>
+                        </div>
+                        <button id="go_next">&#9654;
+                            <script>
+                                next();
+                            </script>
+                        </button>
                     </div>
-                    <button id="go_next">&#9654;
-                        <script>
-                            next();
-                        </script>
-                    </button>
                 </div>
             </div>
         </section>

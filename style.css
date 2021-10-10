@@ -65,18 +65,13 @@ div#scorelist{
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  margin:auto;
   margin-top: 5%;
   padding: 10px;
-  right: 110px;
 }
 
 div#audios{
   display: inline-flex;
-  width: 350px;
   position: relative;
-  right: 100px;
-  margin:auto;
   margin-top: 5%;
   padding: 10px;
   flex-direction: column;
@@ -170,16 +165,23 @@ a.currentlyActive, .scorebutton.currentlyActive{
 div#score {
   display: inline-flex;
   margin: auto;
-  margin-top: 3%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div#scoreview {
+  display: flex;
+  margin: auto;
+  min-width: 700px;
 }
 
 div#canvas_container {
   position: relative;
-  width: 550px;
-  height: 750px;
+  width: 80%;
+  height: 75%;
   overflow: auto;
   margin: auto;
-  margin-top: 3%;
+  margin-top: 0%;
   display: inline-flex;
   align-items: center;
 }
@@ -228,6 +230,7 @@ div#left-side {
   display: inline-flex;
   flex-direction: column;
   position: relative;
+  min-width: 350px;
 }
 
 div#audio-player-container button, div#audios button {
@@ -243,7 +246,6 @@ div#audio-player-container button, div#audios button {
 #links_and_playbuttons {
   position: relative;
   margin: 0;
-  width: 95%;
   max-width: 400px;
   display: inline-flex;
 }
@@ -255,7 +257,6 @@ div#audio-player-container button, div#audios button {
   margin: 0;
   width: 95%;
   max-width: 400px;
-  height: 50px;
   background: #fff;
 }
 /* #audio-player-container::before {
