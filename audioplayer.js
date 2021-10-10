@@ -38,6 +38,7 @@ i = 0;
 for (let playIconContainer of playIconContainers){
     playIconContainer.addEventListener('click', function(event) {
         var targetElement = event.target;
+        var elementID = targetElement.parentElement.id;
         if(playState === 'play') {
             audio.play();
             playAnimations[i].playSegments([14, 27], true);
