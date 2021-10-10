@@ -34,11 +34,10 @@ const muteAnimation = lottieWeb.loadAnimation({
 for (let playAnimation of playAnimations){
 playAnimation.goToAndStop(14, true);
 }
-i = 0;
 for (let playIconContainer of playIconContainers){
     playIconContainer.addEventListener('click', function(event) {
         var targetElement = event.target;
-        if (event.target === '') {
+        if (event.target == '') {
             var targetElement = event.currentTarget
         }
         var elementID = targetElement.parentElement.id;
@@ -56,7 +55,6 @@ for (let playIconContainer of playIconContainers){
             playState = 'play';
         }
     });
-    i++;
 }
 muteIconContainer.addEventListener('click', () => {
     if(muteState === 'unmute') {
