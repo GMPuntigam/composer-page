@@ -8,7 +8,7 @@ const volumeSlider = document.getElementById('volume-slider');
 const muteIconContainer = document.getElementById('mute-icon');
 let playState = 'play';
 let muteState = 'unmute';
-
+var i = 0;
 const n_containers = playIconContainers.length;
 var playAnimations = Array(n_containers);
 for (let playIconContainer of playIconContainers){
