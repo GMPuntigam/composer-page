@@ -60,24 +60,25 @@ h2 {
   font-size: calc(1rem + 3vw);
 }
 div#scorelist{
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
   margin:auto;
   margin-top: 5%;
-  top: -650px;
   padding: 10px;
   right: 110px;
 }
 
 div#audios{
-  display: inline-block;
+  display: inline-flex;
   width: 350px;
   position: relative;
   right: 100px;
   margin:auto;
   margin-top: 5%;
-  top: -630px;
   padding: 10px;
+  flex-direction: column;
 }
 
 
@@ -178,15 +179,15 @@ div#canvas_container {
   overflow: auto;
   margin: auto;
   margin-top: 3%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 button#go_previous{
   position: relative;
   height: 750px;
-  top: -370px;
   margin: auto;
   margin-top: 10%;
-  display: inline-block;
+  display: inline-flex;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -196,14 +197,14 @@ button#go_previous{
   font-size: calc(1rem + 3vw);
   color: rgb(109, 112, 110);
   transition-duration: 0.4s;
+  align-items: center;
 }
 button#go_next{
   position: relative;
   height: 750px;
-  top: -370px;
   margin: auto;
   margin-top: 10%;
-  display: inline-block;
+  display: inline-flex;
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -213,6 +214,7 @@ button#go_next{
   font-size: calc(1rem + 3vw);
   color: rgb(109, 112, 110);
   transition-duration: 0.4s;
+  align-items: center;
 }
 button#go_previous:hover {
   color: black;
@@ -227,9 +229,13 @@ button#go_next:hover {
 	height: 40px;
   padding: 5px;
 } */
+div#left-side {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+}
 
-
-div#audio-player-container button {
+div#audio-player-container button, div#audios button {
   padding: 0;
   border: 0;
   background: transparent;
@@ -239,6 +245,13 @@ div#audio-player-container button {
   height: 40px;
   float: left;
 }
+#links_and_playbuttons {
+  position: relative;
+  margin: 0;
+  width: 95%;
+  max-width: 400px;
+  display: inline-flex;
+}
 #audio-player-container {
 --seek-before-width: 0%;
   --volume-before-width: 100%;
@@ -246,7 +259,7 @@ div#audio-player-container button {
   position: relative;
   margin: 0;
   width: 95%;
-  max-width: 500px;
+  max-width: 400px;
   height: 50px;
   background: #fff;
 }
