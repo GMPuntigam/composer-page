@@ -9,6 +9,7 @@ const muteIconContainer = document.getElementById('mute-icon');
 let playState = 'play';
 let muteState = 'unmute';
 var i = 0;
+var playing = 0;
 const n_containers = playIconContainers.length;
 var playAnimations = Array(n_containers);
 for (let playIconContainer of playIconContainers) {
@@ -46,19 +47,35 @@ for (let playIconContainer of playIconContainers) {
             var elementID = event.currentTarget.parentNode.children[1].id
         }
         var animationID = elementID[elementID["length"] - 1]
-        if (playState === 'play') {
+        if (audio == event.currentTarget.parentNode.children[0]) {
+            if (playState === 'play') {
+                audio = event.currentTarget.parentNode.children[0]
+                setMetadata();
+                audio.play();
+                playAnimations[animationID].playSegments([14, 27], true);
+                playing = animationID;
+                requestAnimationFrame(whilePlaying);
+                playState = 'pause';
+            } else {
+                audio.pause();
+                playAnimations[animationID].playSegments([0, 14], true);
+                cancelAnimationFrame(raf);
+                playState = 'play';
+            }
+        } else {
+            audio.pause();
+            if (playState === 'pause') {
+                playAnimations[playing].playSegments([0, 14], true);
+            }
             audio = event.currentTarget.parentNode.children[0]
             setMetadata();
             audio.play();
             playAnimations[animationID].playSegments([14, 27], true);
             requestAnimationFrame(whilePlaying);
             playState = 'pause';
-        } else {
-            audio.pause();
-            playAnimations[animationID].playSegments([0, 14], true);
-            cancelAnimationFrame(raf);
-            playState = 'play';
+            playing = animationID;
         }
+
     });
 }
 muteIconContainer.addEventListener('click', () => {
