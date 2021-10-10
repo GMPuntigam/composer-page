@@ -37,45 +37,66 @@ for (let playAnimation of playAnimations) {
 }
 for (let playIconContainer of playIconContainers) {
     playIconContainer.addEventListener('click', function (event) {
-        var targetElement = event.target;
-        if (event.target == '') {
-            var targetElement = event.currentTarget
-            var elementID = event.currentTarget.parentNode.children[1].id
-        }
-        var elementID = targetElement.parentElement.id;
-        if (elementID == '') {
-            var elementID = event.currentTarget.parentNode.children[1].id
-        }
-        var animationID = elementID[elementID["length"] - 1]
-        if (audio == event.currentTarget.parentNode.children[0]) {
-            if (playState === 'play') {
+        if (event.currentTarget.parentNode.id != 'audio-player-container') {
+            var targetElement = event.target;
+            if (event.target == '') {
+                var targetElement = event.currentTarget
+                var elementID = event.currentTarget.parentNode.children[1].id
+            }
+            var elementID = targetElement.parentElement.id;
+            if (elementID == '') {
+                var elementID = event.currentTarget.parentNode.children[1].id
+            }
+            var animationID = elementID[elementID["length"] - 1]
+            if (audio == event.currentTarget.parentNode.children[0]) {
+                if (playState === 'play') {
+                    audio = event.currentTarget.parentNode.children[0]
+                    setMetadata();
+                    audio.play();
+                    playAnimations[animationID].playSegments([14, 27], true);
+                    playAnimations['3'].playSegments([14, 27], true);
+                    playing = animationID;
+                    requestAnimationFrame(whilePlaying);
+                    playState = 'pause';
+                } else {
+                    audio.pause();
+                    playAnimations[animationID].playSegments([0, 14], true);
+                    playAnimations['3'].playSegments([0, 14], true);
+                    cancelAnimationFrame(raf);
+                    playState = 'play';
+                }
+            } else {
+                audio.pause();
+                if (playState === 'pause') {
+                    playAnimations[playing].playSegments([0, 14], true);
+                }
+                if (playState === 'play') {
+                    playAnimations['3'].playSegments([14, 27], true);
+                }
                 audio = event.currentTarget.parentNode.children[0]
                 setMetadata();
                 audio.play();
                 playAnimations[animationID].playSegments([14, 27], true);
-                playing = animationID;
                 requestAnimationFrame(whilePlaying);
                 playState = 'pause';
-            } else {
-                audio.pause();
-                playAnimations[animationID].playSegments([0, 14], true);
-                cancelAnimationFrame(raf);
-                playState = 'play';
+                playing = animationID;
             }
         } else {
-            audio.pause();
             if (playState === 'pause') {
+                audio.pause();
                 playAnimations[playing].playSegments([0, 14], true);
+                playAnimations['3'].playSegments([0, 14], true);
+                cancelAnimationFrame(raf);
+                playState = 'play';
+            } else {
+                audio.play();
+                playAnimations[playing].playSegments([14, 27], true);
+                playAnimations['3'].playSegments([14, 27], true);
+                playState = 'pause';
+                requestAnimationFrame(whilePlaying);
+                setMetadata();
             }
-            audio = event.currentTarget.parentNode.children[0]
-            setMetadata();
-            audio.play();
-            playAnimations[animationID].playSegments([14, 27], true);
-            requestAnimationFrame(whilePlaying);
-            playState = 'pause';
-            playing = animationID;
         }
-
     });
 }
 muteIconContainer.addEventListener('click', () => {
