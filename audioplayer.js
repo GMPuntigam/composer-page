@@ -11,7 +11,7 @@ let muteState = 'unmute';
 var i = 0;
 const n_containers = playIconContainers.length;
 var playAnimations = Array(n_containers);
-for (let playIconContainer of playIconContainers){
+for (let playIconContainer of playIconContainers) {
     playAnimations[i] = lottieWeb.loadAnimation({
         container: playIconContainer,
         path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json',
@@ -31,11 +31,11 @@ const muteAnimation = lottieWeb.loadAnimation({
     autoplay: false,
     name: "Mute Animation",
 });
-for (let playAnimation of playAnimations){
-playAnimation.goToAndStop(14, true);
+for (let playAnimation of playAnimations) {
+    playAnimation.goToAndStop(14, true);
 }
-for (let playIconContainer of playIconContainers){
-    playIconContainer.addEventListener('click', function(event) {
+for (let playIconContainer of playIconContainers) {
+    playIconContainer.addEventListener('click', function (event) {
         var targetElement = event.target;
         if (event.target == '') {
             var targetElement = event.currentTarget
@@ -45,12 +45,10 @@ for (let playIconContainer of playIconContainers){
         if (elementID == '') {
             var elementID = event.currentTarget.parentNode.children[1].id
         }
-        var animationID = elementID[elementID["length"]-1]
-        if(playState === 'play') {
+        var animationID = elementID[elementID["length"] - 1]
+        if (playState === 'play') {
             audio = event.currentTarget.parentNode.children[0]
-            displayDuration();
-            setSliderMax();
-            displayBufferedAmount();
+            setMetadata();
             audio.play();
             playAnimations[animationID].playSegments([14, 27], true);
             requestAnimationFrame(whilePlaying);
@@ -64,7 +62,7 @@ for (let playIconContainer of playIconContainers){
     });
 }
 muteIconContainer.addEventListener('click', () => {
-    if(muteState === 'unmute') {
+    if (muteState === 'unmute') {
         muteAnimation.playSegments([0, 15], true);
         audio.muted = true;
         muteState = 'mute';
@@ -76,7 +74,7 @@ muteIconContainer.addEventListener('click', () => {
 });
 
 const showRangeProgress = (rangeInput) => {
-    if(rangeInput === seekSlider) audioPlayerContainer.style.setProperty('--seek-before-width', rangeInput.value / rangeInput.max * 100 + '%');
+    if (rangeInput === seekSlider) audioPlayerContainer.style.setProperty('--seek-before-width', rangeInput.value / rangeInput.max * 100 + '%');
     else audioPlayerContainer.style.setProperty('--volume-before-width', rangeInput.value / rangeInput.max * 100 + '%');
 }
 
@@ -115,8 +113,11 @@ const setSliderMax = () => {
 }
 
 const displayBufferedAmount = () => {
-    const bufferedAmount = Math.floor(audio.buffered.end(audio.buffered.length - 1));
-    audioPlayerContainer.style.setProperty('--buffered-width', `${(bufferedAmount / seekSlider.max) * 100}%`);
+    if (audio.buffered.length > 0) {
+        const bufferedAmount = Math.floor(audio.buffered.end(audio.buffered.length - 1));
+        audioPlayerContainer.style.setProperty('--buffered-width', `${(bufferedAmount / seekSlider.max) * 100}%`);
+    }
+
 }
 
 const whilePlaying = () => {
@@ -124,36 +125,39 @@ const whilePlaying = () => {
     currentTimeContainer.textContent = calculateTime(seekSlider.value);
     audioPlayerContainer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
     raf = requestAnimationFrame(whilePlaying);
-    // if (audio.currentTime == Math.floor(audio.duration)) {
-    //     audio.pause();
-    //     audio.currentTime = 0;
-    // }
+    if (audio.currentTime == Math.floor(audio.duration)) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
 }
 
-if (audio.readyState > 0) {
-    displayDuration();
-    setSliderMax();
-    displayBufferedAmount();
-} else {
-    audio.addEventListener('loadedmetadata', () => {
+const setMetadata = () => {
+    if (audio.readyState > 0) {
         displayDuration();
         setSliderMax();
         displayBufferedAmount();
-    });
+    } else {
+        audio.addEventListener('loadedmetadata', () => {
+            displayDuration();
+            setSliderMax();
+            displayBufferedAmount();
+        });
+    }
 }
+
 
 audio.addEventListener('progress', displayBufferedAmount);
 
 seekSlider.addEventListener('input', () => {
     currentTimeContainer.textContent = calculateTime(seekSlider.value);
-    if(!audio.paused) {
+    if (!audio.paused) {
         cancelAnimationFrame(raf);
     }
 });
 
 seekSlider.addEventListener('change', () => {
     audio.currentTime = seekSlider.value;
-    if(!audio.paused) {
+    if (!audio.paused) {
         requestAnimationFrame(whilePlaying);
     }
 });

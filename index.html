@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -12,97 +13,102 @@
 </head>
 
 <html>
-    <body>
-        <h1>Georg Puntigam - Composer</h1>
-        <article class="scroller">
-            <nav class="sticky">
-                <ul class="list-inline">
-                    <li><a class="navigation" href="#aboutme">About me</a></li>
-                    <li><a class="navigation" href="#works">Works</a></li>
-                    <li><a class="navigation" href="#commission">Commission</a></li>
-                    <li><a class="navigation" href="#tutoring">Tutoring</a></li>
-                </ul>
-            </nav>
-            <section id="aboutme">
-                <!-- <h2>About me</h2> -->
-                <img src="images/RIG_5854_Quadrat.jpg" alt="Avatar" style="width:25%; position: absolute; left: 15%; top: 20% ">
-                <p>I was born 1996 in Cologne and was introduced to music by my parents at an early age. I took some piano lessons in elementary school but never got far as a pianist.
-                Later I discovered the trumpet and fell in love with the instrument quickly. As a teenager I tried myself at composing music. Since then I have been improving constantly.
-                I mainly write music for wind orchestra and brass band.</p>
-            </section>
-            <section id="works">
-                <!-- <h2>Works</h2> -->
-                <div id="my_pdf_viewer">
-                    <div id="score">
-                        <div id="left-side">
-                            <div id="links_and_playbuttons">
-                                <div id="scorelist">
-                                    <div class="scorelink">
-                                        <button class="scorebutton" id="Into_the_void">
-                                            <h3>Into the Void</h3>
-                                        </button>
-                                    </div>
-                                    <div class="scorelink">
-                                        <button class="scorebutton" id="In_Jubilo">
-                                            <h3>In Jubilo</h3>
-                                        </button>
-                                    </div>
-                                    <div class="scorelink">
-                                        <button class="scorebutton" id="Weihnachtstanz">
-                                            <h3>Weihnachtstanz</h3>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div id="audios">
-                                    <div>
-                                        <audio src="audios/into_the_void.mp3" preload="metadata" loop></audio>
-                                        <button id="play-icon0" class="play-icon"></button>
-                                    </div>
-                                    <div>
-                                        <audio src="audios/in_jubilo.mp3" preload="metadata" loop></audio>
-                                        <button id="play-icon1" class="play-icon"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="audio-player-container">
-                                <button id="play-icon" class="play-icon"></button>
-                                <span id="current-time" class="time">0:00</span>
-                                <input type="range" id="seek-slider" max="100" value="0">
-                                <span id="duration" class="time">0:00</span>
-                                <output id="volume-output">100</output>
-                                <input type="range" id="volume-slider" max="100" value="100">
-                                <button id="mute-icon"></button>
-                            </div>
-                        </div>
-                        <button id="go_previous">&#9664;
-                            <script>
-                                previous();
-                            </script>
-                        </button>
-                        <div id="canvas_container">
-                            <canvas id="pdf_renderer">
-                                <script>
-                                    displaypdf('scores/Into_the_void.pdf');
-                                </script>
-                            </canvas>
-                        </div>
-                        <button id="go_next">&#9654;
-                            <script>
-                                next();
-                            </script>
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <section id="commission">
-                <!-- <h2>Commission</h2> -->
-                <p>If you would like to commission a piece or an arrangement please get in contact with me. </p>
-            </section>
-            <section id="tutoring">
-                <!-- <h2>Tutoring</h2> -->
-                <p>If you want advice on how to improve as an arranger and composer please get in contact with me and I will try to make time for you.</p>
-            </section>
-        </article>
-    </body>
-</html>
 
+<body>
+    <h1>Georg Puntigam - Composer</h1>
+    <article class="scroller">
+        <nav class="sticky">
+            <ul class="list-inline">
+                <li><a class="navigation" href="#aboutme">About me</a></li>
+                <li><a class="navigation" href="#works">Works</a></li>
+                <li><a class="navigation" href="#commission">Commission</a></li>
+                <li><a class="navigation" href="#tutoring">Tutoring</a></li>
+            </ul>
+        </nav>
+        <section id="aboutme">
+            <!-- <h2>About me</h2> -->
+            <img src="images/RIG_5854_Quadrat.jpg" alt="Avatar"
+                style="width:25%; position: absolute; left: 15%; top: 20% ">
+            <p>I was born 1996 in Cologne and was introduced to music by my parents at an early age. I took some piano
+                lessons in elementary school but never got far as a pianist.
+                Later I discovered the trumpet and fell in love with the instrument quickly. As a teenager I tried
+                myself at composing music. Since then I have been improving constantly.
+                I mainly write music for wind orchestra and brass band.</p>
+        </section>
+        <section id="works">
+            <!-- <h2>Works</h2> -->
+            <div id="my_pdf_viewer">
+                <div id="score">
+                    <div id="left-side">
+                        <div id="links_and_playbuttons">
+                            <div id="scorelist">
+                                <div class="scorelink">
+                                    <button class="scorebutton" id="Into_the_void">
+                                        <h3>Into the Void</h3>
+                                    </button>
+                                </div>
+                                <div class="scorelink">
+                                    <button class="scorebutton" id="In_Jubilo">
+                                        <h3>In Jubilo</h3>
+                                    </button>
+                                </div>
+                                <div class="scorelink">
+                                    <button class="scorebutton" id="Weihnachtstanz">
+                                        <h3>Weihnachtstanz</h3>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="audios">
+                                <div>
+                                    <audio src="audios/into_the_void.mp3" preload="metadata" loop></audio>
+                                    <button id="play-icon0" class="play-icon"></button>
+                                </div>
+                                <div>
+                                    <audio src="audios/in_jubilo.mp3" preload="metadata" loop></audio>
+                                    <button id="play-icon1" class="play-icon"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="audio-player-container">
+                            <button id="play-icon" class="play-icon"></button>
+                            <span id="current-time" class="time">0:00</span>
+                            <input type="range" id="seek-slider" max="100" value="0">
+                            <span id="duration" class="time">0:00</span>
+                            <output id="volume-output">100</output>
+                            <input type="range" id="volume-slider" max="100" value="100">
+                            <button id="mute-icon"></button>
+                        </div>
+                    </div>
+                    <button id="go_previous">&#9664;
+                        <script>
+                            previous();
+                        </script>
+                    </button>
+                    <div id="canvas_container">
+                        <canvas id="pdf_renderer">
+                            <script>
+                                displaypdf('scores/Into_the_void.pdf');
+                            </script>
+                        </canvas>
+                    </div>
+                    <button id="go_next">&#9654;
+                        <script>
+                            next();
+                        </script>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="commission">
+            <!-- <h2>Commission</h2> -->
+            <p>If you would like to commission a piece or an arrangement please get in contact with me. </p>
+        </section>
+        <section id="tutoring">
+            <!-- <h2>Tutoring</h2> -->
+            <p>If you want advice on how to improve as an arranger and composer please get in contact with me and I will
+                try to make time for you.</p>
+        </section>
+    </article>
+</body>
+
+</html>

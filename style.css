@@ -50,7 +50,7 @@ h1:after {
 	margin: auto;
   margin-bottom: 1px;
 }
-h2 {
+/* h2 {
   position: relative;
   top: 10%;
   transform: translateY(-50%);
@@ -59,7 +59,7 @@ h2 {
   width: 100%;
   left: 0;
   font-size: calc(1rem + 3vw);
-}
+} */
 div#scorelist{
   display: inline-flex;
   flex-direction: column;
@@ -106,7 +106,6 @@ div#scorelist button
 }
 .scroller {
   height: 100%;
-	width: 100%;
   top: 12%;
   overflow-y: scroll;
   font-family: sans-serif;
