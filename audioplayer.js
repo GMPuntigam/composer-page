@@ -37,11 +37,11 @@ playAnimation.goToAndStop(14, true);
 for (let playIconContainer of playIconContainers){
     playIconContainer.addEventListener('click', function(event) {
         var targetElement = event.target;
+        var elementID = targetElement.parentElement.id;
         if (event.target == '') {
             var targetElement = event.currentTarget
+            var elementID = event.currentTarget.parentNode.children[1].id
         }
-        var elementID = targetElement.parentElement.id;
-        
         var animationID = elementID[elementID["length"]-1]
         if(playState === 'play') {
             audio.play();
