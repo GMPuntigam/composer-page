@@ -1,7 +1,7 @@
 /* Implementation of the presentation of the audio player */
 import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
 
-const playIconContainer = document.getElementsByClassName('play-icon');
+const playIconContainers = document.getElementsByClassName('play-icon');
 const audioPlayerContainer = document.getElementById('audio-player-container');
 const seekSlider = document.getElementById('seek-slider');
 const volumeSlider = document.getElementById('volume-slider');
@@ -9,14 +9,19 @@ const muteIconContainer = document.getElementById('mute-icon');
 let playState = 'play';
 let muteState = 'unmute';
 
-const playAnimation = lottieWeb.loadAnimation({
-  container: playIconContainer,
-  path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json',
-  renderer: 'svg',
-  loop: false,
-  autoplay: false,
-  name: "Play Animation",
-});
+const n_containers = playIconContainers.length;
+var playAnimations = Array(n_containers);
+for (let playIconContainer of playIconContainers){
+    playAnimations[i] = lottieWeb.loadAnimation({
+        container: playIconContainer,
+        path: 'https://maxst.icons8.com/vue-static/landings/animated-icons/icons/pause/pause.json',
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        name: "Play Animation",
+    });
+    i++;
+}
 
 const muteAnimation = lottieWeb.loadAnimation({
     container: muteIconContainer,
@@ -26,23 +31,26 @@ const muteAnimation = lottieWeb.loadAnimation({
     autoplay: false,
     name: "Mute Animation",
 });
-
+for (let playAnimation of playAnimations){
 playAnimation.goToAndStop(14, true);
-
-playIconContainer.addEventListener('click', () => {
-    if(playState === 'play') {
-        audio.play();
-        playAnimation.playSegments([14, 27], true);
-        requestAnimationFrame(whilePlaying);
-        playState = 'pause';
-    } else {
-        audio.pause();
-        playAnimation.playSegments([0, 14], true);
-        cancelAnimationFrame(raf);
-        playState = 'play';
-    }
-});
-
+}
+i = 0;
+for (let playIconContainer of playIconContainers){
+    playIconContainer.addEventListener('click', () => {
+        if(playState === 'play') {
+            audio.play();
+            playAnimations[i].playSegments([14, 27], true);
+            requestAnimationFrame(whilePlaying);
+            playState = 'pause';
+        } else {
+            audio.pause();
+            playAnimations[i].playSegments([0, 14], true);
+            cancelAnimationFrame(raf);
+            playState = 'play';
+        }
+    });
+    i++;
+}
 muteIconContainer.addEventListener('click', () => {
     if(muteState === 'unmute') {
         muteAnimation.playSegments([0, 15], true);
@@ -73,7 +81,7 @@ volumeSlider.addEventListener('input', (e) => {
 
 /* Implementation of the functionality of the audio player */
 
-const audio = document.querySelector('audio');
+var audio = document.querySelector('audio');
 const durationContainer = document.getElementById('duration');
 const currentTimeContainer = document.getElementById('current-time');
 const outputContainer = document.getElementById('volume-output');
