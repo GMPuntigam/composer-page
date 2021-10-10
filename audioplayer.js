@@ -47,7 +47,7 @@ for (let playIconContainer of playIconContainers){
         }
         var animationID = elementID[elementID["length"]-1]
         if(playState === 'play') {
-            var audio = event.currentTarget.parentNode.children[0]
+            audio = event.currentTarget.parentNode.children[0]
             audio.play();
             playAnimations[animationID].playSegments([14, 27], true);
             requestAnimationFrame(whilePlaying);
