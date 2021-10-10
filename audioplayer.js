@@ -40,14 +40,15 @@ for (let playIconContainer of playIconContainers){
         var targetElement = event.target;
         var elementID = targetElement.parentElement.id;
         var playIconContainer = document.getElementById(elementID);
+        var animationID = elementID[elementID["length"]-1]
         if(playState === 'play') {
             audio.play();
-            playAnimations[i].playSegments([14, 27], true);
+            playAnimations[animationID].playSegments([14, 27], true);
             requestAnimationFrame(whilePlaying);
             playState = 'pause';
         } else {
             audio.pause();
-            playAnimations[i].playSegments([0, 14], true);
+            playAnimations[animationID].playSegments([0, 14], true);
             cancelAnimationFrame(raf);
             playState = 'play';
         }
