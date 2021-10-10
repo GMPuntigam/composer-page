@@ -6,8 +6,9 @@
 body, html {
   overflow-x: hidden;
   overflow-y: hidden;
-  background-color: white; 
+  background-color: rgb(255, 255, 255); 
   font-family: Sans-Serif;
+  height: 100%;
 }
 body {
   margin: 0 auto;
@@ -104,7 +105,7 @@ div#scorelist button
   display: inline-block;
 }
 .scroller {
-  height: 900px;
+  height: 100%;
 	width: 100%;
   top: 12%;
   overflow-y: scroll;
