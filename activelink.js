@@ -44,5 +44,5 @@ document.addEventListener("DOMContentLoaded", function () {
       displaypdf('scores/Weihnachtstanz.pdf')
     }
   });
-  adjustPDF();
+  checkScreensize();
 });

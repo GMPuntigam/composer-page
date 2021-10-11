@@ -5,17 +5,14 @@ var myState = {
 }
 var orientation_dummy = "default"
 screen.orientation.onchange = function (e) {
-    calculatezoom();
     render();
+}
+
+function checkorientation() {
+    calculatezoom();
     var height = parseInt(getBrowserSize().height);
     var width = parseInt(getBrowserSize().width);
-    if (orientation_dummy == "horizontal") {
-        boolcheck = height < width;
-    } else {
-        boolcheck = height > width;
-    }
-
-    if (boolcheck) {
+    if (height > width) {
         document.getElementById("left-side").style.flexDirection = "row";
         for (var element of document.getElementsByClassName("scorelink")) {
             element.classList.remove("horizontal-orientation");
@@ -30,7 +27,6 @@ screen.orientation.onchange = function (e) {
             orientation_dummy = "horizontal";
         }
     }
-
 }
 
 function calculatezoom() {
@@ -42,7 +38,17 @@ function calculatezoom() {
     myState.zoom = zoom;
 }
 
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+        currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+}
+
 function render() {
+    checkScreensize();
+    checkorientation();
     myState.pdf.getPage(myState.currentPage).then((page) => {
 
         var canvas = document.getElementById("pdf_renderer");
@@ -57,29 +63,15 @@ function render() {
             canvasContext: ctx,
             viewport: viewport
         });
+        sleep(200);
     });
 }
 
 function displaypdf(pdf_path) {
     pdfjsLib.getDocument(pdf_path).then((pdf) => {
-        var height = parseInt(getBrowserSize().height);
-        var width = parseInt(getBrowserSize().width);
-        if (height > width) {
-            document.getElementById("left-side").style.flexDirection = "row";
-            for (var element of document.getElementsByClassName("scorelink")) {
-                element.classList.remove("horizontal-orientation");
-                element.classList.add("vertical-orientation");
-            }
-        } else {
-            document.getElementById("left-side").style.flexDirection = "column";
-            for (var element of document.getElementsByClassName("scorelink")) {
-                element.classList.add("horizontal-orientation");
-                element.classList.remove("vertical-orientation");
-            }
-        }
+        checkScreensize();
         myState.pdf = pdf;
         myState.currentPage = 1;
-        calculatezoom();
         render();
     });
 }
@@ -121,7 +113,7 @@ function getBrowserSize() {
     return { 'width': w, 'height': h };
 }
 
-function adjustPDF() {
+function checkScreensize() {
     if (parseInt(getBrowserSize().height) > 1290 && parseInt(getBrowserSize().width) <= 989 && parseInt(getBrowserSize().width) >= 700) {
         // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
         for (var element of document.getElementsByClassName("scorelink")) {
@@ -131,6 +123,7 @@ function adjustPDF() {
         }
         document.getElementById("scoreview").style.display = "flex";
     } else if (parseInt(getBrowserSize().height) >= 850 && parseInt(getBrowserSize().width) >= 980) {
+        document.getElementById("scoreview").style.display = "flex";
         // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
         for (let element of document.getElementsByClassName("scorelink")) {
             element.classList.add("big-screen");
@@ -138,7 +131,7 @@ function adjustPDF() {
             element.classList.remove("small-screen");
         }
         document.getElementById("scoreview").style.display = "flex";
-    } else if (parseInt(getBrowserSize().height) <= 700 && parseInt(getBrowserSize().width) <= 700) {
+    } else if (parseInt(getBrowserSize().height) <= 700 || parseInt(getBrowserSize().width) <= 700) {
         document.getElementById("scoreview").style.display = "none";
         for (var element of document.getElementsByClassName("scorelink")) {
             element.classList.add("small-screen");
