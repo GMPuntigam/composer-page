@@ -175,14 +175,12 @@ div#score {
 div#scoreview {
   display: flex;
   margin: auto;
-  /* min-width: 700px; */
+  min-width: 700px;
   border: solid 3px rgba(168, 168, 168, 0.5);
 }
 
 div#canvas_container {
   position: relative;
-  width: 80%;
-  height: 75%;
   overflow: auto;
   margin: auto;
   margin-top: 0%;

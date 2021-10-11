@@ -1,4 +1,4 @@
-var pdftarget = "Into_the_void.pdf"
+var pdftarget = "Into_the_void.pdf";
 
 document.addEventListener("DOMContentLoaded", function () {
   const NavigationClasses = [".navigation", ".scorelink"];
@@ -55,7 +55,7 @@ function adjustPDF() {
       element.classList.remove("hasBorder");
     }
     document.getElementById("scoreview").style.display = "flex";
-  } else if (parseInt(getBrowserSize().height) >= 980 && parseInt(getBrowserSize().width) >= 980) {
+  } else if (parseInt(getBrowserSize().height) >= 850 && parseInt(getBrowserSize().width) >= 980) {
     // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
     for (let element of document.getElementsByClassName("scorelink")) {
       element.classList.add("hasBorder");

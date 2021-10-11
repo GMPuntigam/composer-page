@@ -4,6 +4,15 @@ var myState = {
     zoom: 0.65
 }
 
+function calculatezoom() {
+    var height = parseInt(getBrowserSize().height);
+    var width = parseInt(getBrowserSize().width);
+    var horizontalzoom = width / 1240;
+    var verticalzoom = 2 * height * 0.58 / 1754;
+    var zoom = Math.min(horizontalzoom, verticalzoom, 1);
+    myState.zoom = zoom;
+}
+
 function render() {
     myState.pdf.getPage(myState.currentPage).then((page) => {
 
@@ -27,6 +36,7 @@ function displaypdf(pdf_path) {
 
         myState.pdf = pdf;
         myState.currentPage = 1;
+        calculatezoom();
         render();
     });
 }
@@ -48,4 +58,22 @@ function next() {
         // document.getElementById("current_page").value = myState.currentPage;
         render();
     });
+}
+
+function getBrowserSize() {
+    var w, h;
+
+    if (typeof window.innerWidth != 'undefined') {
+        w = window.innerWidth; //other browsers
+        h = window.innerHeight;
+    }
+    else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+        w = document.documentElement.clientWidth; //IE
+        h = document.documentElement.clientHeight;
+    }
+    else {
+        w = document.body.clientWidth; //IE
+        h = document.body.clientHeight;
+    }
+    return { 'width': w, 'height': h };
 }
