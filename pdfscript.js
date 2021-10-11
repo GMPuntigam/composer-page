@@ -21,6 +21,7 @@ function render() {
         });
     });
 }
+
 function displaypdf(pdf_path) {
     pdfjsLib.getDocument(pdf_path).then((pdf) => {
 

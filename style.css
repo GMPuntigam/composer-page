@@ -50,16 +50,7 @@ h1:after {
 	margin: auto;
   margin-bottom: 1px;
 }
-/* h2 {
-  position: relative;
-  top: 10%;
-  transform: translateY(-50%);
-  text-align: center;
-  color: black;
-  width: 100%;
-  left: 0;
-  font-size: calc(1rem + 3vw);
-} */
+
 div#scorelist{
   display: inline-flex;
   flex-direction: column;
@@ -69,18 +60,10 @@ div#scorelist{
   padding: 10px;
 }
 
-div#audios{
-  display: inline-flex;
-  position: relative;
-  margin-top: 5%;
-  padding: 10px;
-  flex-direction: column;
-}
-
-
 div .scorelink{
   padding-top: 5px;
   padding-bottom: 5px;
+  display: inline-flex;
 }
 
 div#scorelist h3 {
