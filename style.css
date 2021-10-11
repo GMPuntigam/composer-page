@@ -125,7 +125,7 @@ div#scorelist button
 img {
   border-radius: 50%;
 }
-a, .scorebutton{
+a, .scorelink h3{
   text-decoration: underline 0.15em rgb(255, 255, 255);
   transition: text-decoration-color 0.4s;
 }
@@ -136,10 +136,10 @@ a:visited {
 a:link {
   color: black;
 } 
-a:hover, .scorebutton:hover{
+a:hover, .scorelink:hover{
   text-decoration-color: rgb(0, 0, 0);
 }
-a.currentlyActive, .scorebutton.currentlyActive{
+a.currentlyActive, .scorelink.currentlyActive h3{
   text-decoration-color: rgb(0, 0, 0);
 }
 .list-inline {
@@ -249,6 +249,9 @@ div#audio-player-container button, div#audios button {
   max-width: 400px;
   display: inline-flex;
 }
+
+/* this section is audio player only */
+
 #audio-player-container {
 --seek-before-width: 0%;
   --volume-before-width: 100%;
@@ -259,16 +262,7 @@ div#audio-player-container button, div#audios button {
   max-width: 400px;
   background: #fff;
 }
-/* #audio-player-container::before {
-  position: absolute;
-  content: '';
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(to left, #007db5, #ff8a00);
-  z-index: -1;
-} */
+
 div#audio-player-container p {
   position: absolute;
   top: -18px;
