@@ -12,45 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-});
-
-
-// for (let navigationlink of document.getElementsByClassName('navigation')) {
-//   navigationlink.addEventListener('click', function (e) {
-//     e = e || window.event;
-//     var target = e.target;
-//     for (let navigationlink of document.getElementsByClassName('navigation')) {
-//       navigationlink.classList.remove("currentlyActive");
-//     }
-//     target.classList.add('currentlyActive')
-//   });
-// }
-
-
-// $(function () {
-//   $('.scorebutton').click(function () {
-//     // this removes the underline class from all other ".navigation" links.
-//     $('.scorebutton').removeClass('currentlyActive');
-
-//     // this makes the one that was clicked underlined
-//     $(this).addClass('currentlyActive');
-//   });
-// });
-
-
-$(function () {
-  $('#Into_the_void').click(function () {
+  document.getElementById('Into_the_void').addEventListener('click', function (e) {
     displaypdf('scores/Into_the_void.pdf')
   });
-});
 
-$(function () {
-  $('#In_Jubilo').click(function () {
+  document.getElementById('In_Jubilo').addEventListener('click', function (e) {
     displaypdf('scores/In_Jubilo.pdf')
   });
-});
-$(function () {
-  $('#Weihnachtstanz').click(function () {
+
+  document.getElementById('Weihnachtstanz').addEventListener('click', function (e) {
     displaypdf('scores/Weihnachtstanz.pdf')
   });
 });
+
+
