@@ -4,6 +4,22 @@ var myState = {
     zoom: 0.65
 }
 
+screen.orientation.onchange = function (e) {
+    calculatezoom();
+    render();
+    var height = parseInt(getBrowserSize().height);
+    var width = parseInt(getBrowserSize().width);
+    if (height > width) {
+        document.getElementById("left-side").style.flexDirection = "column";
+    } else {
+        document.getElementById("left-side").style.flexDirection = "row";
+        for (var element of document.getElementsByClassName("scorelink")) {
+            element.classList.remove("hasBorder");
+        }
+    }
+
+}
+
 function calculatezoom() {
     var height = parseInt(getBrowserSize().height);
     var width = parseInt(getBrowserSize().width);
@@ -33,7 +49,16 @@ function render() {
 
 function displaypdf(pdf_path) {
     pdfjsLib.getDocument(pdf_path).then((pdf) => {
-
+        var height = parseInt(getBrowserSize().height);
+        var width = parseInt(getBrowserSize().width);
+        if (height > width) {
+            document.getElementById("left-side").style.flexDirection = "row";
+        } else {
+            document.getElementById("left-side").style.flexDirection = "column";
+            for (var element of document.getElementsByClassName("scorelink")) {
+                element.classList.remove("hasBorder");
+            }
+        }
         myState.pdf = pdf;
         myState.currentPage = 1;
         calculatezoom();

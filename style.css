@@ -22,7 +22,7 @@ p {
   position: relative;
   margin-top: auto;
   margin-top: bottom;
-  padding-top: calc(2% + 5.5vw);;
+  padding-top: calc(2% + 5.5vw);
   left: 50%;
   width: 40%;
   font-size: calc(0.8rem + 0.8vw);
@@ -52,7 +52,7 @@ h1:after {
 }
 .scroller {
   height: 90%;
-  top: 14%;
+  top: calc(2% + 5.5vw);
   overflow-y: scroll;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
@@ -254,8 +254,9 @@ div#audio-player-container button, div#audios button {
 #links_and_playbuttons {
   position: relative;
   margin: 0;
-  max-width: 300px;
+  max-width: 400px;
   display: inline-flex;
+  min-width: 250px;
 }
 
 /* this section is audio player only */
@@ -270,6 +271,7 @@ div#audio-player-container button, div#audios button {
   padding-top: 30px;
   max-width: 300px;
   background: #fff;
+  min-width: 300px;
 }
 
 div#audio-player-container p {
