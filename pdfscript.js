@@ -63,7 +63,6 @@ function render() {
             canvasContext: ctx,
             viewport: viewport
         });
-        sleep(200);
     });
 }
 
