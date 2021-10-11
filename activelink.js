@@ -1,4 +1,4 @@
-var pdftarget = "Into_the_void.pdf";
+var pdftarget = "Into_the_Void.pdf";
 
 document.addEventListener("DOMContentLoaded", function () {
   const NavigationClasses = [".navigation", ".scorelink"];
