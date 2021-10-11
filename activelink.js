@@ -44,45 +44,5 @@ document.addEventListener("DOMContentLoaded", function () {
       displaypdf('scores/Weihnachtstanz.pdf')
     }
   });
-
   adjustPDF();
 });
-
-function adjustPDF() {
-  if (parseInt(getBrowserSize().height) > 1290 && parseInt(getBrowserSize().width) <= 989 && parseInt(getBrowserSize().width) >= 700) {
-    // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
-    for (var element of document.getElementsByClassName("scorelink")) {
-      element.classList.remove("hasBorder");
-    }
-    document.getElementById("scoreview").style.display = "flex";
-  } else if (parseInt(getBrowserSize().height) >= 850 && parseInt(getBrowserSize().width) >= 980) {
-    // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
-    for (let element of document.getElementsByClassName("scorelink")) {
-      element.classList.add("hasBorder");
-    }
-    document.getElementById("scoreview").style.display = "flex";
-  } else if (parseInt(getBrowserSize().height) <= 700 && parseInt(getBrowserSize().width) <= 700) {
-    document.getElementById("scoreview").style.display = "none";
-    for (var element of document.getElementsByClassName("scorelink")) {
-      element.classList.remove("hasBorder");
-    }
-  }
-}
-
-function getBrowserSize() {
-  var w, h;
-
-  if (typeof window.innerWidth != 'undefined') {
-    w = window.innerWidth; //other browsers
-    h = window.innerHeight;
-  }
-  else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
-    w = document.documentElement.clientWidth; //IE
-    h = document.documentElement.clientHeight;
-  }
-  else {
-    w = document.body.clientWidth; //IE
-    h = document.body.clientHeight;
-  }
-  return { 'width': w, 'height': h };
-}

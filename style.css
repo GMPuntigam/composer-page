@@ -105,7 +105,7 @@ div .scorelink{
   background-color: #fff;
 }
 
-div.scorelink.currentlyActive.hasBorder{
+div.scorelink.currentlyActive.big-screen.horizontal-orientation{
   border: solid 3px rgba(168, 168, 168, 0.5);
   border-right: none;
 }
@@ -420,12 +420,3 @@ input[type="range"]:active::-ms-thumb {
   transform: scale(1.2);
   background: #007db5;
 }
-
-/* @media screen and (max-width: 700px) {
-  div #scoreview {
-      display: none;
-  }
-  div.scorelink.currentlyActive{
-    border: none;
-  }
-} */
