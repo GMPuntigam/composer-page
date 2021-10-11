@@ -13,15 +13,11 @@ body, html {
 body {
   margin: 0 auto;
 }
-.sticky {
-	background-color: #ffffff;
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-  z-index: 10;
-  display: table;
-  margin: 0 auto;
+
+img {
+  border-radius: 50%;
 }
+
 p {
   position: relative;
   top: 15%;
@@ -30,6 +26,9 @@ p {
   width: 40%;
   font-size: calc(1rem + 0.5vw);
 }
+
+
+
 h1 {
   text-align: center;
   margin: 15px;
@@ -51,37 +50,6 @@ h1:after {
   margin-bottom: 1px;
 }
 
-div#scorelist{
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  margin-top: 5%;
-  padding: 10px;
-}
-
-div .scorelink{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  display: inline-flex;
-}
-
-div#scorelist h3 {
-  position: relative;
-  color: black;
-  left: 0;
-  font-size: calc(1rem + 0vw);
-}
-div#scorelist button
-{background-color: transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  height: 30px;
-  display: inline-block;
-}
 .scroller {
   height: 100%;
   top: 12%;
@@ -105,8 +73,55 @@ div#scorelist button
   scroll-behavior: smooth;
   scroll-margin-top: 1em;
 }
-img {
-  border-radius: 50%;
+
+.sticky {
+	background-color: #ffffff;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  z-index: 10;
+  display: table;
+  margin: 0 auto;
+}
+
+
+div#scorelist{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+}
+
+div .scorelink{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  display: inline-flex;
+  width: 100%;
+  background-color: #fff;
+}
+
+div.scorelink.currentlyActive{
+  border: solid 3px rgba(168, 168, 168, 0.5);
+  border-right: none;
+}
+
+div#scorelist h3 {
+  position: relative;
+  color: black;
+  left: 0;
+  font-size: calc(1rem + 0vw);
+}
+div#scorelist button
+{background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  height: 30px;
+  display: inline-block;
 }
 a, .scorelink h3{
   text-decoration: underline 0.15em rgb(255, 255, 255);
@@ -150,12 +165,14 @@ div#score {
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 1%;
 }
 
 div#scoreview {
   display: flex;
   margin: auto;
   min-width: 700px;
+  border: solid 3px rgba(168, 168, 168, 0.5);
 }
 
 div#canvas_container {
@@ -202,13 +219,7 @@ button#go_previous:hover {
 button#go_next:hover {
   color: black;
 }
-/* .player {
-  display: inline-block;
-  margin: auto;
-	width: 150px;
-	height: 40px;
-  padding: 5px;
-} */
+
 div#left-side {
   display: inline-flex;
   flex-direction: column;
@@ -242,6 +253,7 @@ div#audio-player-container button, div#audios button {
   position: relative;
   margin: 0;
   width: 95%;
+  padding-top: 30px;
   max-width: 400px;
   background: #fff;
 }
@@ -262,7 +274,7 @@ div#audio-player-container path {
   stroke: #007db5;
 }
 .time {
-  display: inline-block;
+  /* display: inline-block; */
   width: 37px;
   text-align: center;
   font-size: 20px;
@@ -270,7 +282,7 @@ div#audio-player-container path {
   float: left;
 }
 div#audio-player-container output {
-  display: inline-block;
+  /* display: inline-block; */
   width: 32px;
   text-align: center;
   font-size: 20px;
