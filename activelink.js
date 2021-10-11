@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     e = e || window.event;
     var target = e.currentTarget;
     if (target.classList.contains('currentlyActive')) {
-      displaypdf('scores/Into_the_void.pdf')
+      displaypdf('scores/Into_the_Void.pdf')
     }
   });
 
