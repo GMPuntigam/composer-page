@@ -197,9 +197,6 @@ button#go_previous{
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  font-size: calc(1rem + 3vw);
-  color: rgb(109, 112, 110);
-  transition-duration: 0.4s;
 }
 button#go_next{
   position: relative;
@@ -211,15 +208,30 @@ button#go_next{
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  font-size: calc(1rem + 3vw);
-  color: rgb(109, 112, 110);
+}
+
+.triangle-right {
+width: 0;
+height: 0;
+border-top: 25px solid transparent;
+border-left: 50px solid rgb(109, 112, 110);
+border-bottom: 25px solid transparent;
+transition-duration: 0.4s;
+}
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid rgb(109, 112, 110);
+	border-bottom: 25px solid transparent;
   transition-duration: 0.4s;
 }
-button#go_previous:hover {
-  color: black;
+
+.triangle-left:hover {
+  border-right: 50px solid black;
 }
-button#go_next:hover {
-  color: black;
+.triangle-right:hover {
+  border-left: 50px solid black;
 }
 
 div#left-side {
