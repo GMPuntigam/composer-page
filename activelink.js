@@ -44,17 +44,38 @@ document.addEventListener("DOMContentLoaded", function () {
       displaypdf('scores/Weihnachtstanz.pdf')
     }
   });
+
+  adjustPDF();
 });
-//   document.getElementById('Into_the_void').addEventListener('click', function (e) {
-//     displaypdf('scores/Into_the_void.pdf')
-//   });
 
-//   document.getElementById('In_Jubilo').addEventListener('click', function (e) {
-//     displaypdf('scores/In_Jubilo.pdf')
-//   });
+function adjustPDF() {
+  if (parseInt(getBrowserSize().height) > 1290 && parseInt(getBrowserSize().width) <= 989) {
+    document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
+    document.getElementById("scoreview").style.display = "flex";
+  } else if (parseInt(getBrowserSize().height) >= 980 && parseInt(getBrowserSize().width) >= 980) {
+    document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
+    document.getElementsByClassName("scorelink currentlyActive")[0].style.borderRight = "none";
+    document.getElementById("scoreview").style.display = "flex";
+  } else {
+    document.getElementById("scoreview").style.display = "none";
+    document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "none";
+  }
+}
 
-//   document.getElementById('Weihnachtstanz').addEventListener('click', function (e) {
-//     displaypdf('scores/Weihnachtstanz.pdf')
-//   });
-// 
+function getBrowserSize() {
+  var w, h;
 
+  if (typeof window.innerWidth != 'undefined') {
+    w = window.innerWidth; //other browsers
+    h = window.innerHeight;
+  }
+  else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+    w = document.documentElement.clientWidth; //IE
+    h = document.documentElement.clientHeight;
+  }
+  else {
+    w = document.body.clientWidth; //IE
+    h = document.body.clientHeight;
+  }
+  return { 'width': w, 'height': h };
+}

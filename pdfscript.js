@@ -49,24 +49,3 @@ function next() {
         render();
     });
 }
-// function current() {
-
-// document.getElementById('current_page').addEventListener('keypress', (e) => {
-//     if(myState.pdf == null) return;
-
-//     // Get key code
-//     var code = (e.keyCode ? e.keyCode : e.which);
-
-//     // If key code matches that of the Enter key
-//     if(code == 13) {
-//         var desiredPage = 
-//         document.getElementById('current_page').valueAsNumber;
-
-//         if(desiredPage >= 1 && desiredPage <= myState.pdf._pdfInfo.numPages) {
-//             myState.currentPage = desiredPage;
-//             document.getElementById("current_page").value = desiredPage;
-//             render();
-//         }
-//     }
-// });
-// }
