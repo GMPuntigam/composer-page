@@ -105,7 +105,7 @@ div .scorelink{
   background-color: #fff;
 }
 
-div.scorelink.currentlyActive{
+div.scorelink.currentlyActive.hasBorder{
   border: solid 3px rgba(168, 168, 168, 0.5);
   border-right: none;
 }

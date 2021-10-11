@@ -49,16 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function adjustPDF() {
-  if (parseInt(getBrowserSize().height) > 1290 && parseInt(getBrowserSize().width) <= 989) {
-    document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
+  if (parseInt(getBrowserSize().height) > 1290 && parseInt(getBrowserSize().width) <= 989 && parseInt(getBrowserSize().width) >= 700) {
+    // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
+    for (var element of document.getElementsByClassName("scorelink")) {
+      element.classList.remove("hasBorder");
+    }
     document.getElementById("scoreview").style.display = "flex";
   } else if (parseInt(getBrowserSize().height) >= 980 && parseInt(getBrowserSize().width) >= 980) {
-    document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
-    document.getElementsByClassName("scorelink currentlyActive")[0].style.borderRight = "none";
+    // document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "solid 3px rgba(168, 168, 168, 0.5)";
+    for (let element of document.getElementsByClassName("scorelink")) {
+      element.classList.add("hasBorder");
+    }
     document.getElementById("scoreview").style.display = "flex";
   } else {
     document.getElementById("scoreview").style.display = "none";
-    document.getElementsByClassName("scorelink currentlyActive")[0].style.border = "none";
+    for (var element of document.getElementsByClassName("scorelink")) {
+      element.classList.remove("hasBorder");
+    }
   }
 }
 
