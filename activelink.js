@@ -61,7 +61,7 @@ function adjustPDF() {
       element.classList.add("hasBorder");
     }
     document.getElementById("scoreview").style.display = "flex";
-  } else {
+  } else if (parseInt(getBrowserSize().height) <= 700 && parseInt(getBrowserSize().width) <= 700) {
     document.getElementById("scoreview").style.display = "none";
     for (var element of document.getElementsByClassName("scorelink")) {
       element.classList.remove("hasBorder");
