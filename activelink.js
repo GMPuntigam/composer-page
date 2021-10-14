@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
   checkScreensize();
   document.getElementsByClassName('scroller')[0].addEventListener("scroll", (event) => {
     let scroll = event.target.scrollTop;
+    let windowHeight = event.target.scrollHeight - event.target.clientHeight;
+    let scrollAmount = (scroll / windowHeight) * 100;
+    document.getElementById("scrollbar").style.left = scrollAmount + "%";
     // console.log(scroll)
     if (scroll < getBrowserSize().height) {
       for (let navigationlink of document.querySelectorAll('.navigation')) {

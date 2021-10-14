@@ -27,10 +27,14 @@ function checkorientation() {
     var height = parseInt(getBrowserSize().height);
     var width = parseInt(getBrowserSize().width);
     if (height > width) {
-        document.getElementById("profile").style.flexDirection = "column";
+        for (var element of document.getElementsByClassName("picture-left_text-right")) {
+            element.style.flexDirection = "column"
+        }
 
     } else {
-        document.getElementById("profile").style.flexDirection = "row";
+        for (var element of document.getElementsByClassName("picture-left_text-right")) {
+            element.style.flexDirection = "row"
+        }
     }
 }
 
@@ -118,7 +122,9 @@ function checkScreensize() {
     if (parseInt(getBrowserSize().height) > 700 && parseInt(getBrowserSize().width) <= 1000 && parseInt(getBrowserSize().width) > 700) {
         document.getElementById("scoreview").style.display = "flex";
         document.getElementById("left-side").style.flexDirection = "row";
-        document.getElementById("profile").style.flexDirection = "row";
+        for (var element of document.getElementsByClassName("picture-left_text-right")) {
+            element.style.flexDirection = "row"
+        }
         for (var element of document.getElementsByClassName("scorelink")) {
             element.classList.remove("small-screen");
             element.classList.add("vertical-layout");
@@ -127,7 +133,9 @@ function checkScreensize() {
     } else if (parseInt(getBrowserSize().height) > 700 && parseInt(getBrowserSize().width) > 1000) {
         document.getElementById("scoreview").style.display = "flex";
         document.getElementById("left-side").style.flexDirection = "column";
-        document.getElementById("profile").style.flexDirection = "row";
+        for (var element of document.getElementsByClassName("picture-left_text-right")) {
+            element.style.flexDirection = "row"
+        }
         for (var element of document.getElementsByClassName("scorelink")) {
             element.classList.remove("small-screen");
             element.classList.add("horizontal-layout");

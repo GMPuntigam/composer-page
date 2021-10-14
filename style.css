@@ -74,7 +74,7 @@ section#aboutme{
   padding-top: 30px;
 }
 
-section#aboutme img{
+img.round-leftside{
   min-width: 250px;
   max-width: 500px;
   width: 40vw;
@@ -93,10 +93,12 @@ section#works{
   min-height: 100vh; 
 }
 section#commission{
-  min-height: 50vh; 
+  min-height: 100vh; 
+  padding-top: 30px;
 }
 section#tutoring{
-  min-height: 50vh; 
+  min-height: 100vh; 
+  padding-top: 30px;
 }
 
 .sticky {
@@ -112,7 +114,7 @@ section#tutoring{
   width: 100%;
 }
 
-div#profile {
+.picture-left_text-right {
   display: inline-flex;
   align-items: center;
   width: 100%;
@@ -188,11 +190,24 @@ a.currentlyActive, .scorelink.currentlyActive h3{
   flex-wrap: wrap;
 }
 
+div#scrollbar {
+  display: none;
+  content:'';
+  position: -webkit-sticky;
+	position: absolute;
+  top: 89%;
+  height: 3px;
+  background: black;
+  width: 5%;
+  left: 0%;
+  z-index: 11;
+}
+
+
 .list-inline > li {
 	display: inline-block;
 	margin-left: 0.5em;
 	margin-right: 0.5em;
-  
 }
 
 .list-inline > li:before {
