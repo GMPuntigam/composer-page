@@ -55,6 +55,7 @@ h1:after {
   height: 90%;
   top: max(calc(2% + 5.5vw), 8vh);
   overflow-y: scroll;
+  overflow-x: hidden;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
   scroll-padding: 0;
@@ -197,6 +198,17 @@ a, .scorelink h3{
   transition: text-decoration-color 0.4s;
 }
 
+a.mail:any-link {
+  color: #00b5ac;
+  text-decoration: underline 0.15em rgb(255, 255, 255);
+  transition: text-decoration-color 0.4s;
+}
+
+a.mail:hover {
+  transition: text-decoration-color 0.4s;
+  text-decoration: underline 0.15em #00b5ac;
+}
+
 a:visited {
   color: black;
 }
@@ -209,6 +221,8 @@ a:hover, .scorelink:hover{
 a.currentlyActive, .scorelink.currentlyActive h3{
   text-decoration-color: rgb(0, 0, 0);
 }
+
+
 .list-inline {
   display: flex;
 	list-style: none;

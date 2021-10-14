@@ -163,9 +163,13 @@ const whilePlaying = () => {
     currentTimeContainer.textContent = calculateTime(seekSlider.value);
     audioPlayerContainer.style.setProperty('--seek-before-width', `${seekSlider.value / seekSlider.max * 100}%`);
     raf = requestAnimationFrame(whilePlaying);
-    if (audio.currentTime == Math.floor(audio.duration)) {
+    if (audio.currentTime > Math.floor(audio.duration)) {
         audio.pause();
         audio.currentTime = 0;
+        playAnimations[playing].playSegments([0, 14], true);
+        playAnimations['3'].playSegments([0, 14], true);
+        raf = cancelAnimationFrame(whilePlaying);
+        playState = 'play';
     }
 }
 
