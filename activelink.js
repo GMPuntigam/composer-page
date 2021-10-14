@@ -75,21 +75,26 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       document.getElementsByClassName('navigation')[0].classList.add('currentlyActive');
     }
-    else if (scroll >= getBrowserSize().height && scroll < 2 * getBrowserSize().height) {
+    else if (scroll >= getBrowserSize().height && scroll < 1.8 * getBrowserSize().height) {
       for (let navigationlink of document.querySelectorAll('.navigation')) {
         navigationlink.classList.remove("currentlyActive");
       }
       document.getElementsByClassName('navigation')[1].classList.add('currentlyActive');
-    } else if (scroll >= getBrowserSize().height * 2 && scroll < 2.5 * getBrowserSize().height) {
+    } else if (scroll >= getBrowserSize().height * 1.8 && scroll < 2.3 * getBrowserSize().height) {
       for (let navigationlink of document.querySelectorAll('.navigation')) {
         navigationlink.classList.remove("currentlyActive");
       }
       document.getElementsByClassName('navigation')[2].classList.add('currentlyActive');
-    } else if (scroll >= getBrowserSize().height * 2.5 && scroll < 3 * getBrowserSize().height) {
+    } else if (scroll >= getBrowserSize().height * 2.3 && scroll < 2.8 * getBrowserSize().height) {
       for (let navigationlink of document.querySelectorAll('.navigation')) {
         navigationlink.classList.remove("currentlyActive");
       }
       document.getElementsByClassName('navigation')[3].classList.add('currentlyActive');
+    } else if (scroll >= getBrowserSize().height * 2.8 && scroll < 3.0 * getBrowserSize().height) {
+      for (let navigationlink of document.querySelectorAll('.navigation')) {
+        navigationlink.classList.remove("currentlyActive");
+      }
+      document.getElementsByClassName('navigation')[4].classList.add('currentlyActive');
     }
   });
 });

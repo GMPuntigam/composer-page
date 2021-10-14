@@ -22,7 +22,14 @@ p {
   font-size: calc(0.8rem + 0.8vw);
 }
 
-
+a[href$=".pdf"]:after {
+  /* PDF file */
+width:32px;
+height:32px;
+background:url('http://wwwimages.adobe.com/content/dam/acom/en/legal/images/badges/Adobe_PDF_file_icon_32x32.png');
+display:inline-block;
+content:' ';
+}
 
 h1 {
   text-align: center;
@@ -74,11 +81,17 @@ section#aboutme{
   padding-top: 30px;
 }
 
-img.round-leftside{
+img.round-leftside-big{
   min-width: 250px;
   max-width: 500px;
   width: 40vw;
   border-radius: 50%;
+}
+img.round-leftside-medium{
+  min-width: 150px;
+  max-width: 230px;
+  width: 40vw;
+  border-radius: 0%;
 }
 
 div.textholder {
@@ -92,12 +105,20 @@ div#imagecontainer {
 section#works{
   min-height: 100vh; 
 }
+section#footer{
+  min-height: 10vh; 
+}
 section#commission{
-  min-height: 100vh; 
+  min-height: 60vh; 
   padding-top: 30px;
 }
 section#tutoring{
-  min-height: 100vh; 
+  min-height: 60vh; 
+  padding-top: 30px;
+}
+
+section#support{
+  min-height: 60vh; 
   padding-top: 30px;
 }
 
@@ -119,6 +140,13 @@ section#tutoring{
   align-items: center;
   width: 100%;
   justify-content: space-around;
+}
+
+.picture-left_text-right_close {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
 }
 
 div#scorelist{
@@ -152,6 +180,7 @@ div#scorelist h3 {
   color: black;
   left: 0;
   font-size: calc(1rem + 0vw);
+  padding-right: 10px
 }
 div#scorelist button
 {background-color: transparent;

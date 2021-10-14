@@ -30,9 +30,16 @@ function checkorientation() {
         for (var element of document.getElementsByClassName("picture-left_text-right")) {
             element.style.flexDirection = "column"
         }
+        for (var element of document.getElementsByClassName("picture-left_text-right_close")) {
+            element.style.flexDirection = "column"
+        }
+
 
     } else {
         for (var element of document.getElementsByClassName("picture-left_text-right")) {
+            element.style.flexDirection = "row"
+        }
+        for (var element of document.getElementsByClassName("picture-left_text-right_close")) {
             element.style.flexDirection = "row"
         }
     }
@@ -125,6 +132,9 @@ function checkScreensize() {
         for (var element of document.getElementsByClassName("picture-left_text-right")) {
             element.style.flexDirection = "row"
         }
+        for (var element of document.getElementsByClassName("picture-left_text-right_close")) {
+            element.style.flexDirection = "row"
+        }
         for (var element of document.getElementsByClassName("scorelink")) {
             element.classList.remove("small-screen");
             element.classList.add("vertical-layout");
@@ -134,6 +144,9 @@ function checkScreensize() {
         document.getElementById("scoreview").style.display = "flex";
         document.getElementById("left-side").style.flexDirection = "column";
         for (var element of document.getElementsByClassName("picture-left_text-right")) {
+            element.style.flexDirection = "row"
+        }
+        for (var element of document.getElementsByClassName("picture-left_text-right_close")) {
             element.style.flexDirection = "row"
         }
         for (var element of document.getElementsByClassName("scorelink")) {
