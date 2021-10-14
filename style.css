@@ -23,6 +23,16 @@ p {
   text-align: justify
 }
 
+p.center {
+  position: relative;
+  margin-top: auto;
+  padding: 10px;
+  min-width: 280px;
+  font-size: calc(0.8rem + 0.8vw);
+  text-align: center
+}
+
+
 a[href$=".pdf"]:after {
   /* PDF file */
 width:32px;
