@@ -21,6 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  function getBrowserSize() {
+    var w, h;
+
+    if (typeof window.innerWidth != 'undefined') {
+      w = window.innerWidth; //other browsers
+      h = window.innerHeight;
+    }
+    else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+      w = document.documentElement.clientWidth; //IE
+      h = document.documentElement.clientHeight;
+    }
+    else {
+      w = document.body.clientWidth; //IE
+      h = document.body.clientHeight;
+    }
+    return { 'width': w, 'height': h };
+  }
+
   document.getElementById('play-icon0').addEventListener('click', function (e) {
     e = e || window.event;
     var target = e.currentTarget;
@@ -45,4 +63,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   checkScreensize();
+  document.getElementsByClassName('scroller')[0].addEventListener("scroll", (event) => {
+    let scroll = event.target.scrollTop;
+    // console.log(scroll)
+    if (scroll < getBrowserSize().height) {
+      for (let navigationlink of document.querySelectorAll('.navigation')) {
+        navigationlink.classList.remove("currentlyActive");
+      }
+      document.getElementsByClassName('navigation')[0].classList.add('currentlyActive');
+    }
+    else if (scroll >= getBrowserSize().height && scroll < 2 * getBrowserSize().height) {
+      for (let navigationlink of document.querySelectorAll('.navigation')) {
+        navigationlink.classList.remove("currentlyActive");
+      }
+      document.getElementsByClassName('navigation')[1].classList.add('currentlyActive');
+    } else if (scroll >= getBrowserSize().height * 2 && scroll < 2.5 * getBrowserSize().height) {
+      for (let navigationlink of document.querySelectorAll('.navigation')) {
+        navigationlink.classList.remove("currentlyActive");
+      }
+      document.getElementsByClassName('navigation')[2].classList.add('currentlyActive');
+    } else if (scroll >= getBrowserSize().height * 2.5 && scroll < 3 * getBrowserSize().height) {
+      for (let navigationlink of document.querySelectorAll('.navigation')) {
+        navigationlink.classList.remove("currentlyActive");
+      }
+      document.getElementsByClassName('navigation')[3].classList.add('currentlyActive');
+    }
+  });
 });
+
+
+
+
