@@ -14,17 +14,11 @@ body {
   margin: 0 auto;
 }
 
-img {
-  border-radius: 50%;
-}
-
 p {
   position: relative;
   margin-top: auto;
-  margin-top: bottom;
-  padding-top: calc(2% + 5.5vw);
-  left: 50%;
-  width: 40%;
+  padding: 10px;
+  min-width: 280px;
   font-size: calc(0.8rem + 0.8vw);
 }
 
@@ -52,7 +46,7 @@ h1:after {
 }
 .scroller {
   height: 90%;
-  top: calc(2% + 5.5vw);
+  top: max(calc(2% + 5.5vw), 8vh);
   overflow-y: scroll;
   font-family: sans-serif;
   scroll-snap-type: y mandatory;
@@ -68,11 +62,37 @@ h1:after {
   border-right: 1px solid white;
 	width: 80%;
 	min-width: 100vw;
-	height: 100vh;
+  max-height: 130vh;
 	text-align: center;
 	position: relative;
   scroll-behavior: smooth;
   scroll-margin-top: 1em;
+}
+
+section#aboutme{
+  min-height: 100vh; 
+  padding-top: 30px;
+}
+
+section#aboutme img{
+  min-width: 250px;
+  max-width: 500px;
+  width: 40vw;
+  border-radius: 50%;
+}
+
+div#imagecontainer {
+  padding: 10px
+}
+
+section#works{
+  min-height: 100vh; 
+}
+section#commission{
+  min-height: 50vh; 
+}
+section#tutoring{
+  min-height: 50vh; 
 }
 
 .sticky {
@@ -85,8 +105,13 @@ h1:after {
   margin: 0 auto;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
+div#profile {
+  display: inline-flex;
+  align-items: center;
+}
 
 div#scorelist{
   display: inline-flex;
@@ -105,9 +130,13 @@ div .scorelink{
   background-color: #fff;
 }
 
-div.scorelink.currentlyActive.big-screen.horizontal-orientation{
+div.scorelink.currentlyActive.horizontal-layout.horizontal-orientation{
   border: solid 3px rgba(168, 168, 168, 0.5);
   border-right: none;
+}
+
+div.scorelink.currentlyActive.vertical-layout.horizontal-orientation{
+  border: none;
 }
 
 div#scorelist h3 {
