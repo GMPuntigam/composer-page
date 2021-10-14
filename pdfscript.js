@@ -34,7 +34,6 @@ function checkorientation() {
             element.style.flexDirection = "column"
         }
 
-
     } else {
         for (var element of document.getElementsByClassName("picture-left_text-right")) {
             element.style.flexDirection = "row"
@@ -140,6 +139,9 @@ function checkScreensize() {
             element.classList.add("vertical-layout");
             element.classList.remove("horizontal-layout");
         }
+        for (var element of document.getElementsByClassName("round-leftside-medium")) {
+            element.classList.remove("small-screen");
+        }
     } else if (parseInt(getBrowserSize().height) > 700 && parseInt(getBrowserSize().width) > 1000) {
         document.getElementById("scoreview").style.display = "flex";
         document.getElementById("left-side").style.flexDirection = "column";
@@ -154,6 +156,9 @@ function checkScreensize() {
             element.classList.add("horizontal-layout");
             element.classList.remove("vertical-layout");
         }
+        for (var element of document.getElementsByClassName("round-leftside-medium")) {
+            element.classList.remove("small-screen");
+        }
     } else if (parseInt(getBrowserSize().height) <= 400 || parseInt(getBrowserSize().width) <= 700) {
         document.getElementById("scoreview").style.display = "none";
         document.getElementById("left-side").style.flexDirection = "column";
@@ -161,6 +166,9 @@ function checkScreensize() {
             element.classList.add("small-screen");
             element.classList.remove("vertical-layout");
             element.classList.remove("horizontal-layout");
+        }
+        for (var element of document.getElementsByClassName("round-leftside-medium")) {
+            element.classList.add("small-screen");
         }
     }
 }
