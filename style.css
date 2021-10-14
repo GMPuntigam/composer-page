@@ -136,12 +136,12 @@ div .scorelink{
   background-color: #fff;
 }
 
-div.scorelink.currentlyActive.horizontal-layout.horizontal-orientation{
+div.scorelink.currentlyActive.horizontal-layout{
   border: solid 3px rgba(168, 168, 168, 0.5);
   border-right: none;
 }
 
-div.scorelink.currentlyActive.vertical-layout.horizontal-orientation{
+div.scorelink.currentlyActive.vertical-layout{
   border: none;
 }
 
