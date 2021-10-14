@@ -81,6 +81,10 @@ section#aboutme img{
   border-radius: 50%;
 }
 
+div.textholder {
+  max-width: 600px;
+}
+
 div#imagecontainer {
   padding: 10px
 }
@@ -111,6 +115,8 @@ section#tutoring{
 div#profile {
   display: inline-flex;
   align-items: center;
+  width: 100%;
+  justify-content: space-around;
 }
 
 div#scorelist{

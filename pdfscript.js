@@ -26,21 +26,12 @@ function checkorientation() {
     calculatezoom();
     var height = parseInt(getBrowserSize().height);
     var width = parseInt(getBrowserSize().width);
-    // if (height > width) {
-    //     document.getElementById("left-side").style.flexDirection = "row";
-    //     for (var element of document.getElementsByClassName("scorelink")) {
-    //         element.classList.remove("horizontal-orientation");
-    //         element.classList.add("vertical-orientation");
-    //         orientation_dummy = "vertical";
-    //     }
-    // } else {
-    //     document.getElementById("left-side").style.flexDirection = "column";
-    //     for (var element of document.getElementsByClassName("scorelink")) {
-    //         element.classList.add("horizontal-orientation");
-    //         element.classList.remove("vertical-orientation");
-    //         orientation_dummy = "horizontal";
-    //     }
-    // }
+    if (height > width) {
+        document.getElementById("profile").style.flexDirection = "column";
+
+    } else {
+        document.getElementById("profile").style.flexDirection = "row";
+    }
 }
 
 function calculatezoom() {
@@ -145,7 +136,6 @@ function checkScreensize() {
     } else if (parseInt(getBrowserSize().height) <= 400 || parseInt(getBrowserSize().width) <= 700) {
         document.getElementById("scoreview").style.display = "none";
         document.getElementById("left-side").style.flexDirection = "column";
-        document.getElementById("profile").style.flexDirection = "column";
         for (var element of document.getElementsByClassName("scorelink")) {
             element.classList.add("small-screen");
             element.classList.remove("vertical-layout");
