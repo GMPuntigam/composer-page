@@ -20,6 +20,7 @@ p {
   padding: 10px;
   min-width: 280px;
   font-size: calc(0.8rem + 0.8vw);
+  text-align: justify
 }
 
 a[href$=".pdf"]:after {
@@ -108,7 +109,27 @@ section#works{
 }
 section#footer{
   min-height: 10vh; 
+  background-color: rgb(192, 192, 192);
+  color: white;
+  padding-top: 10px
 }
+
+section#footer a:any-link{
+  min-height: 10vh; 
+  background-color: rgb(192, 192, 192);
+  text-decoration: underline 0.15em rgb(255, 255, 255);
+  color: white;
+  margin-top: 10px
+}
+
+section#footer a:hover{
+  min-height: 10vh; 
+  color: white;
+  text-decoration: underline 0.15em rgb(255, 255, 255);
+  transition: text-decoration-color 0.4s;
+}
+
+
 section#commission{
   min-height: 60vh; 
   padding-top: 30px;
